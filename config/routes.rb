@@ -1,4 +1,18 @@
 Shoutzor::Application.routes.draw do
+
+  get :vote_for, :action => :vote_for, :controller => :vote 
+  get :coming_up, :action => :coming_up, :controller => :vote
+
+  get :search, :action => :find, :controller => :search
+
+  get :login, :action => :login, :controller => :application
+  get :logout, :action => :logout, :controller => :application
+  post :request_pin, :action => :request_pin, :controller => :application
+  post :authenticate, :action => :authenticate, :controller => :application
+
+  root :to => "application#index"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +69,6 @@ Shoutzor::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
 end
