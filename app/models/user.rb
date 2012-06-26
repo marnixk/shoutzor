@@ -5,6 +5,13 @@ class User < ActiveRecord::Base
 	attr_accessible :name, :pin
 
 	#
+	#  Determine if this is a free account
+	#
+	def self.free_account?(name, email)
+		User.where("name = ? or email = ?", name, email).all.length == 0
+	end
+
+	#
 	# is this user allowed to vote ?
 	#
 	def can_vote?

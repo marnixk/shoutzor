@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   	protect_from_forgery
 
-  	before_filter :is_loggedin, :except => [:login, :authenticate, :logout]
+  	before_filter :is_loggedin, :except => [:login, :authenticate, :logout, :request_pin]
 
 
   	#

@@ -34,6 +34,36 @@ class AuthenticationController < ApplicationController
   # Form handler for request a pin code
   #
   def request_pin
-  	redirect_to "/login", :notice => "Check je e-mail en voer je pin code hieronder in"
+
+    if User.free_account?(params['email'], params['name']) then
+
+        user = User.new(params)
+        user.pin = User.generate_pincode
+        user.save
+
+        gmail = Gmail.new("shoutzor@gmail.com", "shoutzor_reply")
+        gmail.deliver do
+            to params['email']
+            subject "Shoutzor inlogcode"
+            text_part do
+                body <<-END 
+                    Hoi,
+
+                    Gebruik onderstaande pincode om in te loggen met je accountnaam:
+
+                        Naam: #{user.name}
+                        Pincode: #{user.pin}
+
+                    Als het niet lukt even Marnix vragen.
+                END
+            end
+        end
+
+        gmail.logout
+
+        redirect_to "/login", :notice => "Check je e-mail en gebruik je pin code om in te loggen"
+    else
+        redirect_to "/login", :notice => "Er bestaat al een account met deze gegevens"
+    end
   end
 end

@@ -13,6 +13,9 @@ gem "taglib-ruby", "~> 0.4.0"
 gem 'draper'
 gem 'rabl'
 gem 'activeadmin'
+gem 'daemons'
+gem 'listen'
+gem 'ruby-gmail'
 
 # Gems used only for assets and not required
 # in production environments by default.
