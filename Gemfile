@@ -16,6 +16,7 @@ gem 'activeadmin'
 gem 'daemons'
 gem 'listen'
 gem 'ruby-gmail'
+gem 'mime'
 
 # Gems used only for assets and not required
 # in production environments by default.

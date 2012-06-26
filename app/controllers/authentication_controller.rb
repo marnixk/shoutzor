@@ -21,7 +21,7 @@ class AuthenticationController < ApplicationController
   	user = User.where(:name => params['name'], :pin => params['pin']).all
 
   	# valid user?
-	if user.length == 1 then
+	  if user.length == 1 then
   		session[:user] = user.first
   		redirect_to "/", :notice => "Je bent ingelogd"
   	else
@@ -37,29 +37,12 @@ class AuthenticationController < ApplicationController
 
     if User.free_account?(params['email'], params['name']) then
 
-        user = User.new(params)
+        user = User.new
+        user.name = params['name']
+        user.email = params['email']
         user.pin = User.generate_pincode
         user.save
-
-        gmail = Gmail.new("shoutzor@gmail.com", "shoutzor_reply")
-        gmail.deliver do
-            to params['email']
-            subject "Shoutzor inlogcode"
-            text_part do
-                body <<-END 
-                    Hoi,
-
-                    Gebruik onderstaande pincode om in te loggen met je accountnaam:
-
-                        Naam: #{user.name}
-                        Pincode: #{user.pin}
-
-                    Als het niet lukt even Marnix vragen.
-                END
-            end
-        end
-
-        gmail.logout
+        user.send_notification
 
         redirect_to "/login", :notice => "Check je e-mail en gebruik je pin code om in te loggen"
     else

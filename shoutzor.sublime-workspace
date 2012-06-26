@@ -60,86 +60,6 @@
 	"buffers":
 	[
 		{
-			"file": "db/migrate/20120626084212_have_album_name.rb",
-			"settings":
-			{
-				"buffer_size": 182,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/authentication_controller.rb",
-			"settings":
-			{
-				"buffer_size": 746,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 2408,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/components/search.js",
-			"settings":
-			{
-				"buffer_size": 254,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/components/playerstatus.js",
-			"settings":
-			{
-				"buffer_size": 232,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/behavior.js",
-			"settings":
-			{
-				"buffer_size": 97,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 264,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 486,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/components/songlist.js",
-			"settings":
-			{
-				"buffer_size": 784,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 908,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "lib/daemons/indexer.rb",
 			"settings":
 			{
@@ -148,10 +68,34 @@
 			}
 		},
 		{
-			"file": "lib/daemons/mplayer.rb",
+			"file": "app/views/authentication/login.html.erb",
 			"settings":
 			{
-				"buffer_size": 598,
+				"buffer_size": 1458,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/application_controller.rb",
+			"settings":
+			{
+				"buffer_size": 583,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20120626151820_user_has_emailaddress.rb",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 1334,
 				"line_ending": "Unix"
 			}
 		}
@@ -159,7 +103,7 @@
 	"build_system": "Packages/User/markdownbuilder.sublime-build",
 	"command_palette":
 	{
-		"height": 62.0,
+		"height": 54.0,
 		"selected_items":
 		[
 			[
@@ -211,7 +155,7 @@
 				"Snippet: Lorem ipsum"
 			]
 		],
-		"width": 435.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -228,19 +172,30 @@
 	},
 	"file_history":
 	[
+		"/home/marnix/Programming/git/shoutzor/Gemfile",
+		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/songlist.js",
+		"/home/marnix/Programming/git/shoutzor/app/views/layouts/application.html.erb",
+		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/behavior.js",
+		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/playerstatus.js",
+		"/home/marnix/Programming/git/shoutzor/app/controllers/authentication_controller.rb",
+		"/home/marnix/Programming/git/shoutzor/app/models/user.rb",
+		"/home/marnix/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/marnix/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/marnix/Programming/git/shoutzor/doc/README_FOR_APP",
+		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/search.js",
+		"/home/marnix/Programming/git/shoutzor/config/routes.rb",
+		"/home/marnix/Programming/git/shoutzor/db/migrate/20120626084212_have_album_name.rb",
+		"/home/marnix/Programming/git/shoutzor/lib/daemons/mplayer.rb",
 		"/home/marnix/Programming/git/shoutzor/app/views/application/index.html.erb",
 		"/home/marnix/Programming/git/shoutzor/app/controllers/application_controller.rb",
 		"/home/marnix/Programming/git/shoutzor/app/views/application/_songlist.html.erb",
 		"/home/marnix/Programming/git/shoutzor/app/models/song.rb",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/songlist.js",
 		"/home/marnix/Programming/git/shoutzor/db/migrate/20120626104244_fromdate_to_datetime.rb",
-		"/home/marnix/Programming/git/shoutzor/app/models/user.rb",
 		"/home/marnix/Programming/git/shoutzor/app/models/vote.rb",
 		"/home/marnix/Programming/git/shoutzor/app/controllers/vote_controller.rb",
 		"/home/marnix/Programming/git/shoutzor/app/views/application/_search.html.erb",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/application.js",
 		"/home/marnix/Programming/git/shoutzor/app/views/application/_nowplaying.html.erb",
-		"/home/marnix/Programming/git/shoutzor/Gemfile",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/vote.js.coffee",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/authentication.js.coffee",
 		"/home/marnix/Programming/git/shoutzor/app/assets/stylesheets/application.css",
@@ -288,8 +243,6 @@
 		"/home/marnix/tmp/default_64/modules/baseconfig/manifests/init.pp",
 		"/home/marnix/tmp/default_64/modules/networkconfig/manifests/init.pp",
 		"/home/marnix/tmp/default_64/modules/networkconfig/templates/interfaces.erb",
-		"/home/marnix/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/home/marnix/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/marnix/tmp/default_64/modules/networkconfig/templates/hosts.erb",
 		"/home/marnix/tmp/default_64/modules/networkconfig/templates/hosts",
 		"/home/marnix/Dropbox/Work/overdracht.markdown",
@@ -346,16 +299,7 @@
 		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-hosts.xml",
 		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-channels.xml",
 		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-preview.xml",
-		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-live.xml",
-		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-hosts.xml",
-		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hippoecm-extension.xml",
-		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/goto/cms-preview-workflowPlugin.xml",
-		"/home/marnix/Programming/Java/mema-website/site/target/site/WEB-INF/hst-config.properties",
-		"/home/marnix/Programming/Java/mema-website/src/main/assembly/distribution.xml",
-		"/home/marnix/Dropbox/Work/Mediamarkt/Platform Upgrade/hippo-upgrade-aantekeningen.txt",
-		"/home/marnix/tmp/cnd1.cnd",
-		"/home/marnix/tmp/cnd2.cnd",
-		"/home/marnix/tmp/voorstel-artikelen.markdown"
+		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-live.xml"
 	],
 	"find":
 	{
@@ -378,6 +322,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"self",
+			"r",
+			"self",
+			"user",
+			"auto_c",
+			"param",
 			"production",
 			"result",
 			"last_vote",
@@ -499,13 +449,7 @@
 			"end",
 			"delta",
 			"end",
-			"color",
-			"style=.*",
-			"<path",
-			"^[^@].+",
-			"[ ]+<path\\s+d=\"([^\"]+)\\\"\\s+id=\\\"(\\w+)\\\"[^>]+>",
-			"\\s+<path\\s+d=\"([^\"]+)\\\"\\s+id=\\\"(\\w+)\\\"[^>]+>",
-			"<path\\s+class=\"([\\w\\s]+)\\\"\\s+d=\"([^\"]+)\\\"\\s+id=\\\"(\\w+)\\\"[^>]+>"
+			"color"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -574,275 +518,11 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "db/migrate/20120626084212_have_album_name.rb",
-					"settings":
-					{
-						"buffer_size": 182,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								93,
-								93
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/authentication_controller.rb",
-					"settings":
-					{
-						"buffer_size": 746,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								259,
-								259
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 2408,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								68,
-								68
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/javascripts/components/search.js",
-					"settings":
-					{
-						"buffer_size": 254,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								49,
-								49
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/assets/javascripts/components/playerstatus.js",
-					"settings":
-					{
-						"buffer_size": 232,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								65,
-								65
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/assets/javascripts/behavior.js",
-					"settings":
-					{
-						"buffer_size": 97,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26,
-								26
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 264,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/models/user.rb",
-					"settings":
-					{
-						"buffer_size": 486,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								429,
-								429
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/assets/javascripts/components/songlist.js",
-					"settings":
-					{
-						"buffer_size": 784,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								700,
-								700
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "Gemfile",
-					"settings":
-					{
-						"buffer_size": 908,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								274,
-								274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
 					"file": "lib/daemons/indexer.rb",
 					"settings":
 					{
@@ -868,19 +548,46 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "lib/daemons/mplayer.rb",
+					"buffer": 1,
+					"file": "app/views/authentication/login.html.erb",
 					"settings":
 					{
-						"buffer_size": 598,
+						"buffer_size": 1458,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								181,
-								181
+								1242,
+								1242
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 230.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/application_controller.rb",
+					"settings":
+					{
+						"buffer_size": 583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -889,6 +596,59 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "db/migrate/20120626151820_user_has_emailaddress.rb",
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 1334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -938,12 +698,32 @@
 		"selected_items":
 		[
 			[
-				"gemfile",
-				"Gemfile"
+				"user.rb",
+				"app/models/user.rb"
 			],
 			[
 				"user",
 				"app/models/user.rb"
+			],
+			[
+				"autc",
+				"app/controllers/authentication_controller.rb"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"userh",
+				"db/migrate/20120626151820_user_has_emailaddress.rb"
+			],
+			[
+				"login",
+				"app/views/authentication/login.html.erb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
 			],
 			[
 				"vote_c",
@@ -952,10 +732,6 @@
 			[
 				"datetime",
 				"db/migrate/20120626104244_fromdate_to_datetime.rb"
-			],
-			[
-				"user.rb",
-				"app/models/user.rb"
 			],
 			[
 				"vote_con",
