@@ -1,14 +1,23 @@
 Shoutzor::Application.routes.draw do
 
+  # 
+  # Vote related requests
+  #   
   get :vote_for, :action => :vote_for, :controller => :vote 
   get :coming_up, :action => :coming_up, :controller => :vote
 
+  #
+  # Search related requests
+  #
   get :search, :action => :find, :controller => :search
 
-  get :login, :action => :login, :controller => :application
-  get :logout, :action => :logout, :controller => :application
-  post :request_pin, :action => :request_pin, :controller => :application
-  post :authenticate, :action => :authenticate, :controller => :application
+  #
+  # Authentication requests
+  #
+  get :login, :action => :login, :controller => :authentication
+  get :logout, :action => :logout, :controller => :authentication
+  post :request_pin, :action => :request_pin, :controller => :authentication
+  post :authenticate, :action => :authenticate, :controller => :authentication
 
   root :to => "application#index"
 

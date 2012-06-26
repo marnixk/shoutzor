@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+
+//= require jquery.ui.core
+//= require jquery.ui.widget
+
+//= require components/playerstatus
+//= require components/songlist
+//= require components/search
+
+//= require behavior

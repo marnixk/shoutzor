@@ -1,0 +1,32 @@
+<% list = Array(list) %>
+
+<div id="songlist">
+
+	<% if not list.empty? then %>
+		<table>
+			<tr>
+				<th>#</th>
+				<th class="title">Title</th>
+				<th class="album">Album</th>
+				<th class="options">Options</th>
+			</tr>
+
+			<% list.each_with_index do |row, idx| %>
+				<tr class="<%= idx % 2 == 0 ? 'even' : 'odd' %>">
+					<td><%= row.track %></td>
+					<td><%= row.title %></td>
+					<td><%= row.album %></td>
+					<td>
+						<%= link_to "vote", {:action => :vote_for, :controller => :vote, :id => row.id}, :remote => true %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+
+	<% else %>
+		<p>
+			There are no results for your search
+		</p>
+	<% end %>
+
+</div>

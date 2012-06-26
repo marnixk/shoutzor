@@ -1,35 +1,16 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
 
-  before_filter :is_loggedin, :except => [:login, :authenticate, :logout]
+  	protect_from_forgery
 
-  def login
-  end
+  	before_filter :is_loggedin, :except => [:login, :authenticate, :logout]
 
-  def logout
-  	session[:user] = nil
-  	redirect_to "/login", :notice => "Je bent nu uitgelogd" 
-  end
 
-  def authenticate
-  	user = User.where(:name => params['name'], :pin => params['pin']).all
-
-  	# valid user?
-	if user.length == 1 then
-  		session[:user] = user.first
-  		redirect_to "/index", :notice => "Je bent ingelogd"
-  	else
-  		session[:user] = nil
-  		redirect_to "/login", :alert => "Onjuist wachtwoord"
-  	end
-  end
-
-  def request_pin
-  	redirect_to "/login", :notice => "Check je e-mail en voer je pin code hieronder in"
-  end
-
-  def index
-  end
+  	#
+  	# Index request
+  	#
+	def index
+		@last_added = Song.added_last(20)
+ 	end
 
 
   protected
@@ -49,7 +30,7 @@ class ApplicationController < ActionController::Base
 	  	if not current_user.nil? 
 	  		return true
 	  	else
-	  		redirect_to :action => :login, :controller => :application
+	  		redirect_to :action => :login, :controller => :authentication
 	  		return false
 	  	end
 	  end
