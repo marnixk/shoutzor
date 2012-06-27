@@ -26,21 +26,20 @@ class User < ActiveRecord::Base
             to record.email
             subject "Shoutzor inlogcode"
             text_part do
-                body <<-END.gsub(/^[ ]+/, '')
+                body <<-END.strip_heredoc
                     Hoi,
 
                     Gebruik onderstaande pincode om in te loggen met je accountnaam:
 
-                    Naam: #{record.name}
-                    Pincode: #{record.pin}
+	                Naam: #{record.name}
+	                Pincode: #{record.pin}
 
-                    Als het niet lukt even Marnix vragen.
+                    Als het niet lukt even een begeleider vragen!
                 END
             end
         end
 
         gmail.logout
-	
 	end
 
 

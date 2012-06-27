@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "/home/marnix/Programming/git/shoutzor"
+		},
+		{
+			"path": "app/logic"
 		}
 	]
 }
