@@ -20,6 +20,12 @@ module Player
 		#
 		def play(song)
 			self.song = song
+			
+			# already playing?
+			if not @player_pid.nil? then
+				stop
+			end
+
 			@player_pid = spawn("/usr/bin/mplayer", "#{song.file}", :out => "/dev/null")
 		end
 
@@ -31,6 +37,7 @@ module Player
 			if not @player_pid.nil? then 
 				puts "Stopping mplayer: #{@player_pid}"
 				Process.kill 9, @player_pid
+				Process.waitpid @player_pid
 			end
 		end
 
@@ -39,7 +46,11 @@ module Player
 		#
 		def playing?
 			if not @player_pid.nil? then 
-				return Process.kill 0, @player_pid
+				begin
+					return Process.kill 0, @player_pid
+				rescue
+					false
+				end
 			end
 			false
 		end
