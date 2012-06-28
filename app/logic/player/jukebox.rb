@@ -5,6 +5,8 @@ module Player
 	#
 	class Jukebox
 
+		attr_accessor :volume, :player
+
 		#
 		#  Initialize data-members
 		#
@@ -25,14 +27,31 @@ module Player
 		#
 		def music_cycle
 
+			@player.tick
+
+			# should stop if too long.
+			if @player.playing_too_long? then 
+				@player.stop
+			end
+
 			if not @player.playing? then
+
 				song = Song.next_song
 				Rails.logger.info "Starting to play: #{song.file}"
+
+				# play song, 
 				@player.play song
+
 			end
 
 		end
 
+		#
+		#  Retrieve daemon instance
+		#
+		def self.instance
+			$player_daemon.jukebox
+		end
 
 	end
 
