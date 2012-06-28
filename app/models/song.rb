@@ -4,7 +4,27 @@ class Song < ActiveRecord::Base
   	
 	has_many :votes
 
+	# get a randoms ong
 	scope :random_song, lambda { order("RANDOM()").limit(1) }
+
+	# search for song with specific text
+	scope :search, lambda { |q| where("title LIKE ? or artist LIKE ? or album LIKE ?", "%#{q}%", "%#{q}%", "%#{q}%") }
+
+	def self.autocomplete_for(term)
+		result = []
+		labels = {
+			:title => "by Track title",
+			:artist => "by Artist",
+			:album => "by Album"
+		}
+		[:title, :artist, :album].each do |field|
+			result += [{:type => "label", :label => labels[field]}]
+			songs = Song.where("#{field} LIKE ?", "#{term}%").limit(5)
+			result += songs.map { |s| { :type => "term", :by => field, :term => s[field]} }
+		end
+
+		result
+	end
 
 	#
 	# Get the last added songs
@@ -12,14 +32,6 @@ class Song < ActiveRecord::Base
 	def self.added_last(count) 
 		Song.order("created_at DESC").limit(count).all
 	end
-
-	#
-	# Search the list of songs
-	#
-	def search_list
-		[]
-	end
-
 
 	#
 	#   Get the next song

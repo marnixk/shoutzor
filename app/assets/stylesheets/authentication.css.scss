@@ -1,3 +1,45 @@
 // Place all the styles related to the authentication controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.ui-autocomplete {
+
+	background-color: white;
+	float: left;
+	width: 250px;	
+
+	list-style: none;
+
+	li {
+		margin: 0;
+	}
+
+	span.separator {
+		font-size: 0.8em;
+		padding-bottom: 0.2em;
+		border-bottom: 1px solid #999;
+		margin-bottom: 0.2em;
+		color: #555;
+		display: block;
+	}
+
+
+	a.term {
+		text-decoration: none;
+		color: black;
+		display: block;
+		padding: 0.3em;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	a.term:hover {
+		text-decoration: underline;
+	}
+
+	li a.ui-state-hover, li:hover a {
+		background-color: #aaa;
+	}
+
+}

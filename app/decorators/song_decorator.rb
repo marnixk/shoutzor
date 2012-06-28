@@ -6,7 +6,11 @@ class SongDecorator < Draper::Base
 	#  Generate track length
 	#
 	def track_length
-		Time.at(self.length).strftime("%M:%S")
+		if not self.length.blank? then
+			Time.at(self.length).strftime("%M:%S")
+		else
+			"n/a"
+		end
 	end
 
 end

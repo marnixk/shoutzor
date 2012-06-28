@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require jquery.ui.core
-//= require jquery.ui.widget
+//= require jquery.ui.all
+
 
 //= require components/playerstatus
 //= require components/songlist
