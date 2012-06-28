@@ -1,8 +1,20 @@
+require 'taglib'
+
 module Indexer
 
 
 	class Analyzer
 
+
+		#
+		#   Has any of the permitted extensions?
+		#
+		def should_index?(file)
+			[".mp3", ".ogg"].include?(File.extname(file))
+		end
+
+
+		
 		#
 		#  Analyze the file
 		#

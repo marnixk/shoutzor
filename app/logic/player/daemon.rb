@@ -19,16 +19,15 @@ module Player
 
 			# make music cycle run every second inside a thread
 			@thread = Thread.fork do |p|
-				while @@running
-					begin
+				begin
+					while @@running
 						@jukebox.music_cycle
 						sleep 1 
-					ensure
-						Rails.logger.flush
 					end
+					@jukebox.stop
+				ensure
+					Rails.logger.flush
 				end
-
-				@jukebox.stop
 			end
 
 		end
@@ -40,9 +39,6 @@ module Player
 			@@running = false
 			@thread.join
 		end
-
-
-	protected
 
 		
 	end

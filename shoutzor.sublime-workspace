@@ -60,34 +60,10 @@
 	"buffers":
 	[
 		{
-			"file": "lib/daemons/indexer.rb",
+			"file": "app/models/song.rb",
 			"settings":
 			{
-				"buffer_size": 430,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/authentication/login.html.erb",
-			"settings":
-			{
-				"buffer_size": 1458,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/application_controller.rb",
-			"settings":
-			{
-				"buffer_size": 583,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "db/migrate/20120626151820_user_has_emailaddress.rb",
-			"settings":
-			{
-				"buffer_size": 150,
+				"buffer_size": 188,
 				"line_ending": "Unix"
 			}
 		},
@@ -95,7 +71,63 @@
 			"file": "app/models/user.rb",
 			"settings":
 			{
-				"buffer_size": 1334,
+				"buffer_size": 193,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/search_controller.rb",
+			"settings":
+			{
+				"buffer_size": 196,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/vote_controller.rb",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20120625145211_track_number.rb",
+			"settings":
+			{
+				"buffer_size": 139,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/application_controller.rb",
+			"settings":
+			{
+				"buffer_size": 648,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 5,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 870,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20120625153655_add_pin.rb",
+			"settings":
+			{
+				"buffer_size": 132,
 				"line_ending": "Unix"
 			}
 		}
@@ -103,13 +135,9 @@
 	"build_system": "Packages/User/markdownbuilder.sublime-build",
 	"command_palette":
 	{
-		"height": 54.0,
+		"height": 62.0,
 		"selected_items":
 		[
-			[
-				"install",
-				"Package Control: Install Package"
-			],
 			[
 				"bash",
 				"Set Syntax: Shell Script (Bash)"
@@ -129,6 +157,10 @@
 			[
 				"mark",
 				"Markdown Preview: current file in browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"pandoc",
@@ -155,7 +187,7 @@
 				"Snippet: Lorem ipsum"
 			]
 		],
-		"width": 449.0
+		"width": 435.0
 	},
 	"console":
 	{
@@ -172,33 +204,16 @@
 	},
 	"file_history":
 	[
-		"/home/marnix/Programming/git/shoutzor/Gemfile",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/songlist.js",
-		"/home/marnix/Programming/git/shoutzor/app/views/layouts/application.html.erb",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/behavior.js",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/playerstatus.js",
-		"/home/marnix/Programming/git/shoutzor/app/controllers/authentication_controller.rb",
-		"/home/marnix/Programming/git/shoutzor/app/models/user.rb",
-		"/home/marnix/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/marnix/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/home/marnix/Programming/git/shoutzor/doc/README_FOR_APP",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/search.js",
-		"/home/marnix/Programming/git/shoutzor/config/routes.rb",
-		"/home/marnix/Programming/git/shoutzor/db/migrate/20120626084212_have_album_name.rb",
-		"/home/marnix/Programming/git/shoutzor/lib/daemons/mplayer.rb",
-		"/home/marnix/Programming/git/shoutzor/app/views/application/index.html.erb",
-		"/home/marnix/Programming/git/shoutzor/app/controllers/application_controller.rb",
-		"/home/marnix/Programming/git/shoutzor/app/views/application/_songlist.html.erb",
-		"/home/marnix/Programming/git/shoutzor/app/models/song.rb",
-		"/home/marnix/Programming/git/shoutzor/db/migrate/20120626104244_fromdate_to_datetime.rb",
-		"/home/marnix/Programming/git/shoutzor/app/models/vote.rb",
-		"/home/marnix/Programming/git/shoutzor/app/controllers/vote_controller.rb",
-		"/home/marnix/Programming/git/shoutzor/app/views/application/_search.html.erb",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/application.js",
-		"/home/marnix/Programming/git/shoutzor/app/views/application/_nowplaying.html.erb",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/vote.js.coffee",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/authentication.js.coffee",
-		"/home/marnix/Programming/git/shoutzor/app/assets/stylesheets/application.css",
+		"/home/marnix/tmp/shoutzor/config/routes.rb",
+		"/home/marnix/tmp/shoutzor/config/application.rb",
+		"/home/marnix/tmp/shoutzor/app/views/layouts/application.html.erb",
+		"/home/marnix/tmp/shoutzor/Gemfile",
+		"/home/marnix/tmp/shoutzor/app/models/vote.rb",
+		"/home/marnix/tmp/shoutzor/db/schema.rb",
+		"/home/marnix/tmp/shoutzor/db/migrate/20120625140056_create_votes.rb",
+		"/home/marnix/tmp/shoutzor/db/migrate/20120625135944_create_songs.rb",
+		"/home/marnix/tmp/shoutzor/db/migrate/20120625140050_create_users.rb",
+		"/home/marnix/tmp/shoutzor/app/controllers/application_controller.rb",
 		"/home/marnix/tmp/4d/12wat/app/assets/stylesheets/theme.css.scss",
 		"/home/marnix/tmp/4d/12wat/app/assets/stylesheets/styles.css.scss",
 		"/home/marnix/tmp/default_64/manifests/base.pp",
@@ -243,6 +258,8 @@
 		"/home/marnix/tmp/default_64/modules/baseconfig/manifests/init.pp",
 		"/home/marnix/tmp/default_64/modules/networkconfig/manifests/init.pp",
 		"/home/marnix/tmp/default_64/modules/networkconfig/templates/interfaces.erb",
+		"/home/marnix/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/marnix/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/marnix/tmp/default_64/modules/networkconfig/templates/hosts.erb",
 		"/home/marnix/tmp/default_64/modules/networkconfig/templates/hosts",
 		"/home/marnix/Dropbox/Work/overdracht.markdown",
@@ -299,7 +316,22 @@
 		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-hosts.xml",
 		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-channels.xml",
 		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-preview.xml",
-		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-live.xml"
+		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-live.xml",
+		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-hosts.xml",
+		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hippoecm-extension.xml",
+		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/goto/cms-preview-workflowPlugin.xml",
+		"/home/marnix/Programming/Java/mema-website/site/target/site/WEB-INF/hst-config.properties",
+		"/home/marnix/Programming/Java/mema-website/src/main/assembly/distribution.xml",
+		"/home/marnix/Dropbox/Work/Mediamarkt/Platform Upgrade/hippo-upgrade-aantekeningen.txt",
+		"/home/marnix/tmp/cnd1.cnd",
+		"/home/marnix/tmp/cnd2.cnd",
+		"/home/marnix/tmp/voorstel-artikelen.markdown",
+		"/home/marnix/Dropbox/Work/Senior Traject/05-04-2012-BILA over senior traject.txt",
+		"/home/marnix/Dropbox/Work/Senior Traject/afspraak",
+		"/home/marnix/Dropbox/Work/Senior Traject/rutger-gesprek",
+		"/home/marnix/tmp/s5-issues-inschatting.markdown",
+		"/home/marnix/tmp/v118-toevoegingen.txt",
+		"/home/marnix/Documents/PC Hooft/draaiboek-performance-problement.xt"
 	],
 	"find":
 	{
@@ -322,18 +354,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"self",
-			"r",
-			"self",
-			"user",
-			"auto_c",
+			"notice",
 			"param",
-			"production",
-			"result",
-			"last_vote",
-			"@params",
-			"description",
-			"application",
+			"pin",
+			"\"></",
+			"password",
+			"@song",
 			"background-size",
 			"profiles::apache::modjk",
 			"httpd::java",
@@ -449,7 +475,13 @@
 			"end",
 			"delta",
 			"end",
-			"color"
+			"color",
+			"style=.*",
+			"<path",
+			"^[^@].+",
+			"[ ]+<path\\s+d=\"([^\"]+)\\\"\\s+id=\\\"(\\w+)\\\"[^>]+>",
+			"\\s+<path\\s+d=\"([^\"]+)\\\"\\s+id=\\\"(\\w+)\\\"[^>]+>",
+			"<path\\s+class=\"([\\w\\s]+)\\\"\\s+d=\"([^\"]+)\\\"\\s+id=\\\"(\\w+)\\\"[^>]+>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -518,23 +550,23 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lib/daemons/indexer.rb",
+					"file": "app/models/song.rb",
 					"settings":
 					{
-						"buffer_size": 430,
+						"buffer_size": 188,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								430,
-								430
+								122,
+								122
 							]
 						],
 						"settings":
@@ -549,37 +581,114 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/authentication/login.html.erb",
+					"file": "app/models/user.rb",
 					"settings":
 					{
-						"buffer_size": 1458,
+						"buffer_size": 193,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1242,
-								1242
+								193,
+								193
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 230.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "app/controllers/search_controller.rb",
+					"settings":
+					{
+						"buffer_size": 196,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/vote_controller.rb",
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "db/migrate/20120625145211_track_number.rb",
+					"settings":
+					{
+						"buffer_size": 139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								139,
+								139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "app/controllers/application_controller.rb",
 					"settings":
 					{
-						"buffer_size": 583,
+						"buffer_size": 648,
 						"regions":
 						{
 						},
@@ -601,19 +710,45 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "db/migrate/20120626151820_user_has_emailaddress.rb",
+					"buffer": 6,
+					"file": "app/views/application/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 150,
+						"buffer_size": 5,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								121,
-								121
+								5,
+								5
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 870,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
 							]
 						],
 						"settings":
@@ -627,28 +762,27 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/models/user.rb",
+					"buffer": 8,
+					"file": "db/migrate/20120625153655_add_pin.rb",
 					"settings":
 					{
-						"buffer_size": 1334,
+						"buffer_size": 132,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								869,
-								869
+								132,
+								132
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -698,100 +832,32 @@
 		"selected_items":
 		[
 			[
-				"user.rb",
-				"app/models/user.rb"
-			],
-			[
-				"user",
-				"app/models/user.rb"
-			],
-			[
-				"autc",
-				"app/controllers/authentication_controller.rb"
-			],
-			[
-				"gemf",
-				"Gemfile"
-			],
-			[
-				"userh",
-				"db/migrate/20120626151820_user_has_emailaddress.rb"
-			],
-			[
-				"login",
-				"app/views/authentication/login.html.erb"
-			],
-			[
-				"gemfile",
-				"Gemfile"
-			],
-			[
-				"vote_c",
-				"app/controllers/vote_controller.rb"
-			],
-			[
-				"datetime",
-				"db/migrate/20120626104244_fromdate_to_datetime.rb"
-			],
-			[
-				"vote_con",
-				"app/controllers/vote_controller.rb"
-			],
-			[
-				"_songli",
-				"app/views/application/_songlist.html.erb"
-			],
-			[
-				"songlist",
-				"app/assets/javascripts/components/songlist.js"
-			],
-			[
-				"song",
-				"app/models/song.rb"
-			],
-			[
-				"play",
-				"app/assets/javascripts/components/playerstatus.js"
-			],
-			[
-				"songli",
-				"app/assets/javascripts/components/songlist.js"
-			],
-			[
-				"ap",
-				"app/controllers/application_controller.rb"
-			],
-			[
-				"nowpl",
-				"app/views/application/_nowplaying.html.erb"
-			],
-			[
-				"index",
-				"app/views/application/index.html.erb"
-			],
-			[
-				"applicationcss",
-				"app/assets/stylesheets/application.css"
-			],
-			[
-				"gem",
-				"Gemfile"
-			],
-			[
-				"song.r",
-				"app/models/song.rb"
-			],
-			[
 				"route",
 				"config/routes.rb"
 			],
 			[
-				"auth",
-				"app/controllers/authentication_controller.rb"
+				"application",
+				"config/application.rb"
 			],
 			[
-				"have_",
-				"db/migrate/20120626084212_have_album_name.rb"
+				"app",
+				"config/application.rb"
+			],
+			[
+				"add_pin",
+				"db/migrate/20120625153655_add_pin.rb"
+			],
+			[
+				"login",
+				"app/views/application/login.html.erb"
+			],
+			[
+				"track",
+				"db/migrate/20120625145211_track_number.rb"
+			],
+			[
+				"song",
+				"db/migrate/20120625135944_create_songs.rb"
 			],
 			[
 				"style",
@@ -1024,6 +1090,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 287.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true
 }

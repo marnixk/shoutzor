@@ -13,15 +13,16 @@ module Indexer
 		def daemonize
 
 			# initialize vars
-			@indexer = Indexer.new("/home/marnix/Music")
+			@indexer = Indexer::Indexer.new("/home/marnix/Music")
 
 			@indexer.index_check
 			@indexer.listen_for_change
 
-			# make music cycle run every second inside a thread
+			# # make music cycle run every second inside a thread
 			@thread = Thread.fork do |p|
 				while @@running
 					sleep 1 
+					Rails.logger.flush
 				end
 			end
 		end

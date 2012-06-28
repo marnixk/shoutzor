@@ -25,10 +25,21 @@ module Player
 		#
 		def music_cycle
 
+			@player.tick
+
+			# should stop if too long.
+			if @player.playing_too_long? then 
+				@player.stop
+			end
+
 			if not @player.playing? then
+
 				song = Song.next_song
 				Rails.logger.info "Starting to play: #{song.file}"
+
+				# play song, 
 				@player.play song
+
 			end
 
 		end
