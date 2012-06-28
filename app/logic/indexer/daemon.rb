@@ -7,6 +7,8 @@ module Indexer
 
 		@@running = true
 
+		attr_accessor :indexer
+
 		#
 		#  Jukebox cycle
 		#

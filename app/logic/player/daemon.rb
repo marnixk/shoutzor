@@ -7,6 +7,8 @@ module Player
 
 		@@running = true
 
+		attr_accessor :jukebox
+		
 		#
 		#  Jukebox cycle
 		#

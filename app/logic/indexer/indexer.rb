@@ -53,6 +53,11 @@ module Indexer
 			@listener.start false
 		end
 
+		def self.instance
+			$indexer_daemon.indexer
+		end
+
+
 	end
 
 

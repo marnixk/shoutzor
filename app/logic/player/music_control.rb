@@ -5,7 +5,7 @@ module Player
 	#
 	class MusicControl
 
-		MaxTicksPerSong = 3 * 60 # 3 minutes
+		MaxTicksPerSong = 4 * 60 # 4 minutes
 
 		attr_accessor :song
 

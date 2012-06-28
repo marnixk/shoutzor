@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627150138) do
+ActiveRecord::Schema.define(:version => 20120628134649) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120627150138) do
     t.integer  "track"
     t.string   "album"
     t.string   "artist"
+    t.integer  "length"
   end
 
   create_table "users", :force => true do |t|

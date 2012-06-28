@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
 
-	attr_accessible :title, :album, :file, :last_played, :track, :artist
+	attr_accessible :title, :album, :file, :last_played, :track, :artist, :length
   	
 	has_many :votes
 

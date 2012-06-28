@@ -5,17 +5,19 @@
 	<% if not list.empty? then %>
 		<table>
 			<tr>
-				<th>#</th>
 				<th class="title">Title</th>
 				<th class="album">Album</th>
-				<th class="options">Options</th>
+				<th class="artist">Artist</th>
+				<th class="tracklength">Length</th>
+				<th class="options">&nbsp;</th>
 			</tr>
 
 			<% list.each_with_index do |row, idx| %>
 				<tr class="<%= idx % 2 == 0 ? 'even' : 'odd' %>">
-					<td><%= row.track %></td>
 					<td><%= row.title %></td>
+					<td><%= row.artist %></td>
 					<td><%= row.album %></td>
+					<td><%= row.track_length %></td>
 					<td>
 						<%= link_to "vote", {:action => :vote_for, :controller => :vote, :id => row.id}, :remote => true %>
 					</td>

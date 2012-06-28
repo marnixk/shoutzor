@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   	# Index request
   	#
 	def index
-		@last_added = Song.added_last(20)
+		@last_added = SongDecorator.decorate(Song.added_last(20))
  	end
 
 	protected

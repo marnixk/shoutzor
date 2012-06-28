@@ -5,6 +5,8 @@ module Player
 	#
 	class Jukebox
 
+		attr_accessor :volume, :player
+
 		#
 		#  Initialize data-members
 		#
@@ -44,6 +46,12 @@ module Player
 
 		end
 
+		#
+		#  Retrieve daemon instance
+		#
+		def self.instance
+			$player_daemon.jukebox
+		end
 
 	end
 
