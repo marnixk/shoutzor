@@ -60,14 +60,6 @@
 	"buffers":
 	[
 		{
-			"file": "lib/daemons/indexer.rb",
-			"settings":
-			{
-				"buffer_size": 430,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/views/authentication/login.html.erb",
 			"settings":
 			{
@@ -79,23 +71,55 @@
 			"file": "app/controllers/application_controller.rb",
 			"settings":
 			{
-				"buffer_size": 583,
+				"buffer_size": 648,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "db/migrate/20120626151820_user_has_emailaddress.rb",
+			"file": "app/logic/indexer/analyzer.rb",
 			"settings":
 			{
-				"buffer_size": 150,
+				"buffer_size": 346,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/user.rb",
+			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 1334,
+				"buffer_size": 983,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/logic/indexer/daemon.rb",
+			"settings":
+			{
+				"buffer_size": 539,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/logic/indexer/indexer.rb",
+			"settings":
+			{
+				"buffer_size": 1258,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/initializers/jukebox_init.rb",
+			"settings":
+			{
+				"buffer_size": 124,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/initializers/indexer_init.rb",
+			"settings":
+			{
+				"buffer_size": 130,
 				"line_ending": "Unix"
 			}
 		}
@@ -172,13 +196,18 @@
 	},
 	"file_history":
 	[
+		"/home/marnix/Programming/git/shoutzor/config/initializers/indexer_init.rb",
+		"/home/marnix/Programming/git/shoutzor/app/logic/indexer/indexer.rb",
+		"/home/marnix/Programming/git/shoutzor/lib/daemons/indexer.rb",
+		"/home/marnix/Programming/git/shoutzor/db/migrate/20120626151820_user_has_emailaddress.rb",
+		"/home/marnix/Programming/git/shoutzor/app/logic/indexer/daemon.rb",
+		"/home/marnix/Programming/git/shoutzor/app/models/user.rb",
 		"/home/marnix/Programming/git/shoutzor/Gemfile",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/songlist.js",
 		"/home/marnix/Programming/git/shoutzor/app/views/layouts/application.html.erb",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/behavior.js",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/playerstatus.js",
 		"/home/marnix/Programming/git/shoutzor/app/controllers/authentication_controller.rb",
-		"/home/marnix/Programming/git/shoutzor/app/models/user.rb",
 		"/home/marnix/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/marnix/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 		"/home/marnix/Programming/git/shoutzor/doc/README_FOR_APP",
@@ -294,12 +323,7 @@
 		"/home/marnix/Programming/Java/mema-website/site/src/main/resources/META-INF/hst-assembly/overrides/template-composer-rest.xml<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
 		"/home/marnix/Programming/Java/mema-website/site/src/main/resources/META-INF/hst-assembly/overrides/template-composer-rest.xml",
 		"/home/marnix/Programming/Java/mema-website/site/src/main/webapp/WEB-INF/hst-config.properties",
-		"/home/marnix/Programming/Java/mema-website/build",
-		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-content-live.xml",
-		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-hosts.xml",
-		"/home/marnix/Programming/Java/mema-website/content/src/main/resources/hst-channels.xml",
-		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-preview.xml",
-		"/home/marnix/Programming/Java/mema-website/content/target/classes/hst-content-live.xml"
+		"/home/marnix/Programming/Java/mema-website/build"
 	],
 	"find":
 	{
@@ -322,6 +346,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"player_daemon",
 			"self",
 			"r",
 			"self",
@@ -448,8 +473,7 @@
 			"sillyMsie",
 			"end",
 			"delta",
-			"end",
-			"color"
+			"end"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -518,37 +542,11 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lib/daemons/indexer.rb",
-					"settings":
-					{
-						"buffer_size": 430,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								430,
-								430
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/views/authentication/login.html.erb",
 					"settings":
 					{
@@ -575,11 +573,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "app/controllers/application_controller.rb",
 					"settings":
 					{
-						"buffer_size": 583,
+						"buffer_size": 648,
 						"regions":
 						{
 						},
@@ -601,11 +599,129 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "db/migrate/20120626151820_user_has_emailaddress.rb",
+					"buffer": 2,
+					"file": "app/logic/indexer/analyzer.rb",
 					"settings":
 					{
-						"buffer_size": 150,
+						"buffer_size": 346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							],
+							[
+								322,
+								322
+							],
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/logic/indexer/daemon.rb",
+					"settings":
+					{
+						"buffer_size": 539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								170,
+								170
+							],
+							[
+								294,
+								294
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/logic/indexer/indexer.rb",
+					"settings":
+					{
+						"buffer_size": 1258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								463,
+								463
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "config/initializers/jukebox_init.rb",
+					"settings":
+					{
+						"buffer_size": 124,
 						"regions":
 						{
 						},
@@ -627,28 +743,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/models/user.rb",
+					"buffer": 7,
+					"file": "config/initializers/indexer_init.rb",
 					"settings":
 					{
-						"buffer_size": 1334,
+						"buffer_size": 130,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								869,
-								869
+								76,
+								76
+							],
+							[
+								115,
+								115
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -698,6 +817,10 @@
 		"selected_items":
 		[
 			[
+				"gemfile",
+				"shoutzor/Gemfile"
+			],
+			[
 				"user.rb",
 				"app/models/user.rb"
 			],
@@ -720,10 +843,6 @@
 			[
 				"login",
 				"app/views/authentication/login.html.erb"
-			],
-			[
-				"gemfile",
-				"Gemfile"
 			],
 			[
 				"vote_c",
