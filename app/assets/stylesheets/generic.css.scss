@@ -1,12 +1,13 @@
-// Place all the styles related to the authentication controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-$light: #FFaa00;
+// orange style
+$light: #FFb300; 
+
+// blue style
+// $light: rgb(0, 150, 255); 
 
 $normal: #333;
 $normal-up: lighten($normal, 20%);
-$visual-height: 350px;
+$visual-height: 250px;
 $shadow: #111;
 
 body {
@@ -109,6 +110,11 @@ body.fire {
 			padding-left: 1em;
 		}
 
+		.title { width: 40%; }
+		.album { width: 25%; }
+		.artist { width: 25%; }
+		.tracklength { width: 10%; text-align: right; }
+
 	}
 
 	tbody {
@@ -120,10 +126,16 @@ body.fire {
 			border-top: 1px solid transparent;
 			color: #eee;
 			font-size: 1.2em;
+			line-height: 1.5em;
 		}
 
 		td.title {
 			padding-left: 1em;
+		}
+
+		td.tracklength {
+			text-align: right;
+			padding-right: 1em;
 		}
 
 		td.options {

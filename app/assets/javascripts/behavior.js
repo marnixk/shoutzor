@@ -7,7 +7,11 @@
 		container : "#comingUpContainer"
 	});
 
-	$("#effect").visualBase();
+	$("#effect").visualBase({
+		plugins : [
+			new TextBanner({})
+		]
+	});
 	
 	$("#searchbox").search({
 		onSearch : function(item, q) {
