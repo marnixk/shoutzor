@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$light: #B3FF00;
+$light: #FFaa00;
 
 $normal: #333;
 $normal-up: lighten($normal, 20%);
 $visual-height: 350px;
+$shadow: #111;
 
 body {
 	font-size: 62.5%;
@@ -45,8 +46,7 @@ body.fire {
 		bottom: 0;
 		left: 0;
 		right: 0;	
-		background: image-url("tmp/visual-bg.jpg") 50% 50% no-repeat;
-		z-index: 1;
+ 		z-index: 1;
 	}
 
 	.tabs {
@@ -85,6 +85,9 @@ body.fire {
 	table {
 		width: 100%;
 		margin-bottom: 4em;
+		border-bottom: 1px solid darken($light, 20%);
+
+		box-shadow: 0 0 5px $shadow;
 	}
 
 	thead {
@@ -99,6 +102,7 @@ body.fire {
 			padding-left: 0;
 			text-align: left;
 			font-weight: bold;
+			font-size: 1.3em;
 		}
 
 		th.title {
@@ -113,20 +117,27 @@ body.fire {
 		td {
 			padding-top: 1.0em;
 			padding-bottom: 1.0em;
-
+			border-top: 1px solid transparent;
 			color: #eee;
+			font-size: 1.2em;
 		}
 
 		td.title {
 			padding-left: 1em;
 		}
 
-		tr:hover {
+		td.options {
+			display: none;
+		}
+
+		tr:hover td {
 			background-color: darken($light, 20%);
+
+			border-bottom: 1px solid darken($light, 50%);
+			border-top: 1px solid $light;
+
 			cursor: pointer;
-			td {
-				color: black;
-			}
+			color: black;
 		}
 	}
 }

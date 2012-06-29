@@ -6,6 +6,8 @@
 	$("#comingup").comingUp({ 
 		container : "#comingUpContainer"
 	});
+
+	$("#effect").visualBase();
 	
 	$("#searchbox").search({
 		onSearch : function(item, q) {

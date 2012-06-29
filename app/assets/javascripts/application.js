@@ -15,10 +15,13 @@
 
 //= require jquery.ui.all
 
+//= require lib/raphael-min
 
 //= require components/playerstatus
 //= require components/songlist
 //= require components/search
 //= require components/comingup
+
+//= require components/visual/base
 
 //= require behavior
