@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
 		}
 		[:title, :artist, :album].each do |field|
 			result += [{:type => "label", :label => labels[field]}]
-			songs = Song.where("#{field} LIKE ?", "#{term}%").limit(5)
+			songs = Song.where("#{field} LIKE ?", "#{term}%").group(field).limit(5)
 			result += songs.map { |s| { :type => "term", :by => field, :term => s[field]} }
 		end
 

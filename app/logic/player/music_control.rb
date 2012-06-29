@@ -15,6 +15,7 @@ module Player
 		def initialize
 			@current_song = nil
 			@player_pid = nil
+			@song_started_at = nil
 			@tick = 0
 		end
 
@@ -26,8 +27,8 @@ module Player
 			@tick = 0
 
 			# set song
-			self.song = song
-
+			@song = song
+			@song_started_at = Time.now
 			# start song
 			@player_pid = spawn("/usr/bin/mplayer", "#{song.file}", :in => "/dev/null", :out => "/dev/null")
 		end
@@ -51,6 +52,17 @@ module Player
 		#
 		def tick
 			@tick += 1
+		end
+
+		#
+		# How long have we been running this song?
+		#
+		def seconds_playing
+			if not @song_started_at.nil? then
+				Time.now - @song_started_at
+			else
+				-1
+			end
 		end
 
 		#

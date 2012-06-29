@@ -46,6 +46,27 @@ module Player
 
 		end
 
+		def now_playing
+			current_song = player.song
+			track_length = current_song.length
+			playtime = player.seconds_playing.to_i
+
+			{
+				:song => { :album => current_song.album, :artist => current_song.artist, :title => current_song.title}, 
+				:raw => {
+					:track_length => track_length, 
+					:playtime => playtime,
+				},
+				:formatted => {
+					:track_length => Time.at(track_length).strftime("%M:%S"),
+					:playtime => Time.at(playtime).strftime("%M:%S")
+				}
+
+			}
+		end
+
+
+
 		#
 		#  Retrieve daemon instance
 		#

@@ -16,6 +16,7 @@
 		 * Initialize
 		 */
 		_create : function() {
+			console.log($(this.element).data("status"));
 		}
 	});
 
