@@ -2,5 +2,14 @@
 
 	$("#songlist").songList();
 	$("#status").playerStatus();
-	$("#searchbox").search();
+
+	$("#comingup").comingUp({ 
+		container : "#comingUpContainer"
+	});
+	
+	$("#searchbox").search({
+		onSearch : function(item, q) {
+			$("#songlist").data("songList").retrieveItems(item, q);
+		}
+	});
 })(jQuery);

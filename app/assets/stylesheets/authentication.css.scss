@@ -2,6 +2,134 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$light: #B3FF00;
+
+$normal: #333;
+$normal-up: lighten($normal, 20%);
+$visual-height: 350px;
+
+body {
+	font-size: 62.5%;
+}
+
+body.fire {
+	background-color: #313131;
+	font-family: Verdana;
+}
+
+
+#visual {
+	margin-top: 4em;
+	margin-bottom: 4em;
+	background-color: #191919;
+	border-top: 2px solid $light;
+	border-bottom: 1px solid $light;
+	height: $visual-height;
+
+
+	position: relative;
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-shadow: inset 0 0 100px black;
+		z-index: 2;
+	}
+
+	.background {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;	
+		background: image-url("tmp/visual-bg.jpg") 50% 50% no-repeat;
+		z-index: 1;
+	}
+
+	.tabs {
+		
+		z-index: 3;
+		position: relative;
+
+		li {
+			display: inline;
+			float: right;
+			margin-right: 4px;
+		}
+
+		a {
+			display: block;
+			padding: 1em;
+			padding-left: 3em;
+			padding-right: 3em;
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+			background-color: $normal;
+
+			span { font-size: 1.2em;}
+
+			&:hover {
+				background-color: $light;
+				color: black;
+			}
+		}
+
+	}
+}
+
+#songlist {
+	table {
+		width: 100%;
+		margin-bottom: 4em;
+	}
+
+	thead {
+		background-color: #222;
+		border-top: 1px solid $light;
+		border-bottom: 1px solid darken($light, 20%);
+
+		color: #eee;
+
+		th {
+			padding: 1em;
+			padding-left: 0;
+			text-align: left;
+			font-weight: bold;
+		}
+
+		th.title {
+			padding-left: 1em;
+		}
+
+	}
+
+	tbody {
+		background-color: #444;
+
+		td {
+			padding-top: 1.0em;
+			padding-bottom: 1.0em;
+
+			color: #eee;
+		}
+
+		td.title {
+			padding-left: 1em;
+		}
+
+		tr:hover {
+			background-color: darken($light, 20%);
+			cursor: pointer;
+			td {
+				color: black;
+			}
+		}
+	}
+}
 
 .ui-autocomplete {
 

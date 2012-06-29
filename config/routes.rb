@@ -10,11 +10,14 @@ Shoutzor::Application.routes.draw do
   # Search related requests
   #
   get :search, :action => :find, :controller => :search
+  get :list, :action => :list, :controller => :search
 
   #
   # Now playing request
   #
   get :now_playing, :action => :now_playing, :controller => :status
+
+  get :html, :action => :html, :controller => :application
 
   #
   # Authentication requests

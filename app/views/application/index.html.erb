@@ -1,6 +1,6 @@
 <% content_for :pagetitle do %>Songlist<% end %>
 
-<a href="/logout">Logout</a>
+<a href="/logout">Logout</a> | <a href="#" id="comingup">Playlist</a>
 
 <%= render :partial => "nowplaying", :locals => { :status => @playstatus } %>
 <%= render :partial => "search" %>

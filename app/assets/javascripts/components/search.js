@@ -9,7 +9,7 @@
 		 * Default options
 		 */
 		options : {
-
+			onSearch : function(item, q) { console.log("Search for: " + q); }
 		},
 
 		/**
@@ -24,7 +24,7 @@
 				source : "/search",
 				minLength : 2,
 				select : function(widget, item) {
-					$this.searchFor(item.item.term);
+					$this.searchFor(item.item);
 				}
 			})
 			.data("autocomplete")._renderItem = function(ul, item) {
@@ -32,7 +32,7 @@
 			};
 
 			$this.form.submit(function() {
-				$this.searchFor($this.element.val());
+				$this.searchFor({ by : "manual", term : $this.element.val() });
 				return false;
 			});
 		},
@@ -40,8 +40,8 @@
 		/**
 		 * Execute search query
 		 */
-		searchFor : function(q) {
-			console.log("searching for: " + q);
+		searchFor : function(item) {
+			this.options.onSearch(item, item.term);
 			return false;
 		},
 

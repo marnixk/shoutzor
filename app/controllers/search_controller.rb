@@ -8,5 +8,20 @@ class SearchController < ApplicationController
 		render :json => items
 	end
 
+	def list
+
+		puts params.inspect
+
+		results = 	if %w(title artist album).include?(params['by']) then
+						Song.search_by(params['query'], params['by'])
+					else
+						Song.search(params['query'])
+					end
+
+		small = results.map { |song| song.to_json }
+
+		render :json => small
+	end
+
 
 end

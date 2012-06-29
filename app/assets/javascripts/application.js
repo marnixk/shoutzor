@@ -19,5 +19,6 @@
 //= require components/playerstatus
 //= require components/songlist
 //= require components/search
+//= require components/comingup
 
 //= require behavior

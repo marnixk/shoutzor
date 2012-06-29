@@ -10,6 +10,10 @@ class Song < ActiveRecord::Base
 	# search for song with specific text
 	scope :search, lambda { |q| where("title LIKE ? or artist LIKE ? or album LIKE ?", "%#{q}%", "%#{q}%", "%#{q}%") }
 
+	# search for a song with text in field
+	scope :search_by, lambda { |q, field| where("#{field} LIKE ?", "%#{q}%") }
+
+
 	def self.autocomplete_for(term)
 		result = []
 		labels = {
@@ -52,6 +56,28 @@ class Song < ActiveRecord::Base
 		else
 			# get a random song
 			Song.random_song.all.first
+		end
+
+	end
+
+	#
+	# To json
+	#
+	def to_json
+		{ 
+			:title => self.title, 
+			:album => self.album, 
+			:artist => self.artist, 
+			:length => self.length ? format_time(length) : 'n/a',
+			:id => self.id 
+		}
+	end
+
+	def format_time(length)
+		if length.seconds > 1.hour then 
+			Time.at(self.length).strftime("%H:%M:%S")
+		else
+			Time.at(self.length).strftime("%M:%S")
 		end
 
 	end

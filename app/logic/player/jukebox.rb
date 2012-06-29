@@ -48,7 +48,7 @@ module Player
 
 		def now_playing
 			current_song = player.song
-			track_length = current_song.length
+			track_length = current_song['length']
 			playtime = player.seconds_playing.to_i
 
 			{

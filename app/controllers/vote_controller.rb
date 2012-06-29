@@ -1,7 +1,11 @@
 class VoteController < ApplicationController
 
+	NumberOfVotesToShow = 8
+
 	def coming_up
-		render :json => Vote.next_votes(5)
+		votes = Vote.next_votes(NumberOfVotesToShow)
+		json_list = votes.map { |v| v.song.to_json }
+		render :json => json_list
 	end
 
 

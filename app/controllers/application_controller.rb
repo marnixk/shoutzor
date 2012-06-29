@@ -10,8 +10,13 @@ class ApplicationController < ActionController::Base
   	# Index request
   	#
 	def index
-		@last_added = SongDecorator.decorate(Song.added_last(20))
-		@play_status = Player::Jukebox.instance.now_playing
+		@last_added = SongDecorator.decorate(Song.added_last(100))
+		@playstatus = Player::Jukebox.instance.now_playing
+ 	end
+
+
+ 	def html
+ 		render :layout => "htmlbase"
  	end
 
 	protected
