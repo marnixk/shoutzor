@@ -16,7 +16,6 @@
 //= require jquery.ui.all
 
 //= require lib/raphael-min
-//= require lib/processing.min
 
 //= require components/playerstatus
 //= require components/songlist
@@ -25,5 +24,7 @@
 
 //= require components/visual/base
 //= require components/visual/textbanner
+//= require components/visual/scroller-plugin
+//= require components/visual/vgafont
 
 //= require behavior

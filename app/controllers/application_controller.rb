@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
  		render :layout => "htmlbase"
  	end
 
+ 	 def test
+ 		render :layout => "htmlbase2"
+ 	end
+
 	protected
 
 

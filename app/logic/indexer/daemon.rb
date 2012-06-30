@@ -15,7 +15,7 @@ module Indexer
 		def daemonize
 
 			# initialize vars
-			@indexer = Indexer::Indexer.new("/home/marnix/Music")
+			@indexer = Indexer::Indexer.new("/home/marnix/Music/Anime")
 
 			@indexer.index_check
 			@indexer.listen_for_change

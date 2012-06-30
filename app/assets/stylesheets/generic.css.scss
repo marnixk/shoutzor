@@ -1,13 +1,21 @@
 
 // orange style
-$light: #FFb300; 
+// $light: #FFb300; 
 
 // blue style
 // $light: rgb(0, 150, 255); 
 
+// green style
+$light: rgb(100, 200, 100); 
+$light-up: rgb(100, 255, 100);
+
+$input-color: #111;
+$input-border-color: #555;
+
+$background: #313131;
 $normal: #333;
 $normal-up: lighten($normal, 20%);
-$visual-height: 250px;
+$visual-height: 350px;
 $shadow: #111;
 
 body {
@@ -15,16 +23,14 @@ body {
 }
 
 body.fire {
-	background-color: #313131;
+	background-color: $background;
 	font-family: Verdana;
 }
 
 
 #visual {
-	margin-top: 4em;
 	margin-bottom: 4em;
 	background-color: #191919;
-	border-top: 2px solid $light;
 	border-bottom: 1px solid $light;
 	height: $visual-height;
 
@@ -74,7 +80,7 @@ body.fire {
 			span { font-size: 1.2em;}
 
 			&:hover {
-				background-color: $light;
+				background-color: $light-up;
 				color: black;
 			}
 		}
@@ -156,11 +162,17 @@ body.fire {
 
 .ui-autocomplete {
 
-	background-color: white;
+	background-color: $input-color;
 	float: left;
 	width: 250px;	
 
 	list-style: none;
+	border: 1px solid $input-border-color;
+	border-top: 1px solid $input-color;
+
+	margin-top: -2px;
+
+	box-shadow: 0 0 2px black;
 
 	li {
 		margin: 0;
@@ -169,7 +181,7 @@ body.fire {
 	span.separator {
 		font-size: 0.8em;
 		padding-bottom: 0.2em;
-		border-bottom: 1px solid #999;
+		border-bottom: 1px solid darken($normal, 50%);
 		margin-bottom: 0.2em;
 		color: #555;
 		display: block;
@@ -177,20 +189,61 @@ body.fire {
 
 
 	a.term {
+		font-size: 1.2em;
+		color: white;
 		text-decoration: none;
-		color: black;
 		display: block;
-		padding: 0.3em;
+		padding: 1em;
 		padding-left: 1em;
 		padding-right: 1em;
-	}
+		border-bottom: 1px solid transparent;
+		border-top: 1px solid transparent;
 
-	a.term:hover {
-		text-decoration: underline;
-	}
+		&:hover, &:focus, &.ui-state-hover {
+			background-color: darken($light, 20%);
 
-	li a.ui-state-hover, li:hover a {
-		background-color: #aaa;
-	}
+			border-bottom: 1px solid darken($light, 50%);
+			border-top: 1px solid $light;
 
+			cursor: pointer;
+			color: black;
+		}
+	}
+}
+
+#search-container {
+	position: absolute;
+	top: $visual-height - 60px;
+	left: 50%;
+	margin-left: -470px;
+	z-index: 100;
+	box-shadow: 0 0 20px black;
+
+	#search {
+		padding: 2em;
+		border-top: 1px solid $light;
+		background-color: $background;
+
+		input[type='text'] {
+			font-size: 1.5em;
+			background-color: $input-color;
+			border: 1px solid $input-border-color;
+			padding: 0.5em;
+			padding-top: 0.2em;
+			padding-bottom: 0.2em;
+			box-shadow: inset 0 0 5px black;
+			color: white;
+			width: 250px;
+
+			&:focus {
+				outline: none;
+			}
+
+			&::-webkit-input-placeholder,
+			&:-moz-placeholder {
+				color: blue;
+			}
+		}
+
+	}
 }
