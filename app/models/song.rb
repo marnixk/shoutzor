@@ -17,11 +17,11 @@ class Song < ActiveRecord::Base
 	def self.autocomplete_for(term)
 		result = []
 		labels = {
-			:title => "by Track title",
-			:artist => "by Artist",
-			:album => "by Album"
+			:title => "... by title",
+			:artist => "... by artist",
+			:album => "... by album"
 		}
-		[:title, :artist, :album].each do |field|
+		[:artist, :album, :title].each do |field|
 			result += [{:type => "label", :label => labels[field]}]
 			songs = Song.where("#{field} LIKE ?", "#{term}%").group(field).limit(5)
 			result += songs.map { |s| { :type => "term", :by => field, :term => s[field]} }

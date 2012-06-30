@@ -75,16 +75,22 @@
 					row.addClass("odd");
 				} 
 
-				$("<td />").text(item.title).appendTo(row);
+				$("<td />", { "class" : "title"}).text(item.title).appendTo(row);
 				$("<td />").text(item.album).appendTo(row);
 				$("<td />").text(item.artist).appendTo(row);
-				$("<td />").text(item.length).appendTo(row);
+				$("<td />", { "class" : "tracklength"} ).text(item.length).appendTo(row);
 
-				var options = $("<td/>");
+				var options = $("<td/>", { "class" : "options"});
 				var vote = $("<a />", { href : "/vote_for?tstamp=" + new Date().getTime() + "&id=" + item.id, "data-remote" : "true"}).text("vote");
 				options.append(vote);
 
 				row.append(options);
+
+				// click on row triggers vote.
+				row.click(function() {
+					$(this).find("a").click();
+					return false;
+				});
 
 				tableBody.append(row);
 

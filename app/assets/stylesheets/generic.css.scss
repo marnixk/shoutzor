@@ -179,9 +179,10 @@ body.fire {
 	}
 
 	span.separator {
-		font-size: 0.8em;
-		padding-bottom: 0.2em;
-		border-bottom: 1px solid darken($normal, 50%);
+		font-size: 1.0em;
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+		padding-left: 1em;
 		margin-bottom: 0.2em;
 		color: #555;
 		display: block;
@@ -194,7 +195,7 @@ body.fire {
 		text-decoration: none;
 		display: block;
 		padding: 1em;
-		padding-left: 1em;
+		padding-left: 2em;
 		padding-right: 1em;
 		border-bottom: 1px solid transparent;
 		border-top: 1px solid transparent;
