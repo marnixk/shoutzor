@@ -25,6 +25,7 @@
 //= require components/visual/base
 //= require components/visual/textbanner
 //= require components/visual/scroller-plugin
+//= require components/visual/notice-plugin
 //= require components/visual/vgafont
 
 //= require behavior

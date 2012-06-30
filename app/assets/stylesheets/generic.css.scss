@@ -88,6 +88,10 @@ body.fire {
 	}
 }
 
+body.fire.loginpage {
+	background: black;
+}
+
 
 .loginpage #visual {
 	position: absolute;
@@ -95,6 +99,22 @@ body.fire {
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
+
+.loginpage .bottomeffect {
+	position: absolute;
+	bottom: -20px;
+	height: 240px;
+	left: 0;
+	right: 0;
+}
+
+.loginpage .notice {
+	position: absolute;
+	top: 0;
+	height: 300px;
+	left: 0;
+	right: 0;
 }
 
 

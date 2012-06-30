@@ -71,15 +71,7 @@
 			"file": "app/assets/javascripts/components/visual/base.js",
 			"settings":
 			{
-				"buffer_size": 5149,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/application.js",
-			"settings":
-			{
-				"buffer_size": 992,
+				"buffer_size": 5374,
 				"line_ending": "Unix"
 			}
 		},
@@ -87,7 +79,7 @@
 			"file": "app/assets/javascripts/behavior.js",
 			"settings":
 			{
-				"buffer_size": 2244,
+				"buffer_size": 2381,
 				"line_ending": "Unix"
 			}
 		},
@@ -103,7 +95,7 @@
 			"file": "app/assets/stylesheets/generic.css.scss",
 			"settings":
 			{
-				"buffer_size": 3898,
+				"buffer_size": 4138,
 				"line_ending": "Unix"
 			}
 		},
@@ -119,7 +111,7 @@
 			"file": "app/views/layouts/login.html.erb",
 			"settings":
 			{
-				"buffer_size": 345,
+				"buffer_size": 413,
 				"line_ending": "Unix"
 			}
 		},
@@ -136,6 +128,22 @@
 			"settings":
 			{
 				"buffer_size": 508,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/components/visual/notice-plugin.js",
+			"settings":
+			{
+				"buffer_size": 860,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/shared/_visual.html.erb",
+			"settings":
+			{
+				"buffer_size": 331,
 				"line_ending": "Unix"
 			}
 		}
@@ -212,6 +220,7 @@
 	},
 	"file_history":
 	[
+		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/application.js",
 		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/components/visual/scroller-plugin.js",
 		"/home/marnix/Programming/git/shoutzor/app/views/shared/_visual.html.erb",
 		"/home/marnix/Programming/git/shoutzor/app/views/shared/_fullvisual.html.erb",
@@ -219,7 +228,6 @@
 		"/home/marnix/Programming/git/shoutzor/app/assets/stylesheets/application.css",
 		"/home/marnix/Programming/git/shoutzor/app/views/application/html.html.erb",
 		"/home/marnix/Programming/git/shoutzor/app/controllers/search_controller.rb",
-		"/home/marnix/Programming/git/shoutzor/app/assets/javascripts/application.js",
 		"/home/marnix/Programming/git/shoutzor/app/models/song.rb",
 		"/home/marnix/Programming/git/shoutzor/config/initializers/indexer_init.rb",
 		"/home/marnix/Programming/git/shoutzor/config/initializers/jukebox_init.rb",
@@ -362,6 +370,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TextScroller",
 			"var",
 			"$this.options.blockSize",
 			"x",
@@ -488,8 +497,7 @@
 			"number",
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-			"body",
-			"tfe-locations-tooltip"
+			"body"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -497,6 +505,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"Notice",
 			"<td class=\"options\"><a ",
 			"<version>2.0.1-SNAPSHOT</version>",
 			"\\n",
@@ -559,7 +568,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 10,
 			"sheets":
 			[
 				{
@@ -594,15 +603,15 @@
 					"file": "app/assets/javascripts/components/visual/base.js",
 					"settings":
 					{
-						"buffer_size": 5149,
+						"buffer_size": 5374,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								690,
-								690
+								631,
+								631
 							]
 						],
 						"settings":
@@ -611,55 +620,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 96.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/assets/javascripts/application.js",
-					"settings":
-					{
-						"buffer_size": 992,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								969,
-								969
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "app/assets/javascripts/behavior.js",
 					"settings":
 					{
-						"buffer_size": 2244,
+						"buffer_size": 2381,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1725,
-								1725
-							],
-							[
-								1846,
-								1846
+								1335,
+								1335
 							]
 						],
 						"settings":
@@ -668,13 +647,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1055.0,
+						"translation.y": 645.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "config/routes.rb",
 					"settings":
 					{
@@ -702,19 +681,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "app/assets/stylesheets/generic.css.scss",
 					"settings":
 					{
-						"buffer_size": 3898,
+						"buffer_size": 4138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1322,
-								1322
+								1340,
+								1340
 							]
 						],
 						"settings":
@@ -723,13 +702,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1082.0,
+						"translation.y": 1172.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "app/controllers/application_controller.rb",
 					"settings":
 					{
@@ -755,19 +734,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "app/views/layouts/login.html.erb",
 					"settings":
 					{
-						"buffer_size": 345,
+						"buffer_size": 413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								345,
-								345
+								267,
+								267
 							]
 						],
 						"settings":
@@ -782,7 +761,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "app/views/application/loginhtml.html.erb",
 					"settings":
 					{
@@ -808,7 +787,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "app/views/layouts/htmlbase.html.erb",
 					"settings":
 					{
@@ -830,6 +809,60 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/assets/javascripts/components/visual/notice-plugin.js",
+					"settings":
+					{
+						"buffer_size": 860,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								761,
+								761
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/views/shared/_visual.html.erb",
+					"settings":
+					{
+						"buffer_size": 331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 105.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -879,6 +912,18 @@
 		"selected_items":
 		[
 			[
+				"_vi",
+				"views/shared/_visual.html.erb"
+			],
+			[
+				"app",
+				"assets/javascripts/application.js"
+			],
+			[
+				"base.js",
+				"assets/javascripts/components/visual/base.js"
+			],
+			[
 				"visualbase",
 				"assets/javascripts/components/visual/base.js"
 			],
@@ -909,10 +954,6 @@
 			[
 				"behav",
 				"assets/javascripts/behavior.js"
-			],
-			[
-				"base.js",
-				"assets/javascripts/components/visual/base.js"
 			],
 			[
 				"route",

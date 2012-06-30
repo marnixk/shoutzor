@@ -14,12 +14,17 @@
 
 			plugins : [],
 
+			containerId : "effect",
+			fire: true,
+			iterate: true,
+
 			// grid properties
 			blockSize : 8,
 			blockMargin : 0,
 			roundness : 0,
 
 			maxWidth: 200,
+			maxHeight: -1,
 
 			// when to increase animation frame
 			frameEveryMs : 25,
@@ -57,16 +62,19 @@
 			var $this = this;
 			$this.element = $(this.element);
 
-			$("#effect").attr({ 
+			$this.element.attr({ 
 					"width" : $this.options.width,
 					"height" : $this.options.height
 				});
 
-			$this.canvas = document.getElementById("effect").getContext("2d");
+			$this.canvas = document.getElementById($this.options.containerId).getContext("2d");
 
 			$this.width = 2 + Math.ceil($this.element.width() / $this.options.blockSize);
 			$this.height = 1 +  Math.ceil($this.element.height() / $this.options.blockSize);
 
+			if ($this.options.maxHeight != -1 && $this.height > $this.options.maxHeight) {
+				$this.height = $this.options.maxHeight;
+			}
 
 			$this.random = new Array($this.options.randomSize);
 			for (var idx = 0; idx < $this.random.length; ++idx) {
@@ -83,8 +91,6 @@
 							$this.options.tint(idx).b * 255 * (idx / 255)
 						);
 			}
-
-			$this.colors[$this.colors.length - 1] = "#ffffff";
 
 			// matrix
 			$this.matrix = new Array($this.width * $this.height);
@@ -172,10 +178,12 @@
 				};
 
 			$this._iterateMatrix(baton);
-			$this._fuelBottom(baton);
+
+			if ($this.options.fire) {
+				$this._fuelBottom(baton);
+			}
 
 			for (var idx in $this.options.plugins) {
-
 				$this.options.plugins[idx].execute(
 							$this, {
 								frame : $this.frameNumber
@@ -217,7 +225,7 @@
 						$this.matrix[offset] = avg;
 
 						var b = $this.blocks[offset];
-						$this.canvas.fillStyle = $this.colors[avg];
+						$this.canvas.fillStyle = $this.colors[$this.matrix[offset]];
 						$this.canvas.fillRect(b.x, b.y, b.w, b.h);
 					}
 

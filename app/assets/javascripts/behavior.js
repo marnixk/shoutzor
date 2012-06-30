@@ -66,38 +66,63 @@
 		// set innerheight
 		$("body").css("height", $(window).innerHeight());
 		$("#effect").attr("width", $(window).innerWidth());
-		$("#effect").attr("height", $(window).innerHeight());
+		$("#effect").attr("height", 240);
 
+
+		var blue = function(x) {
+				return {
+					r : 0.1,
+					g : 0.4,
+					b : 0.9
+				};			
+		}
+
+		var red = function(x) {
+			if (x > 100) {
+				return {
+					r : 0.9,
+					g : 0.9,
+					b : 0.0
+				};
+			}
+			else if (x > 50) {
+				return {
+					r : 0.9,
+					g : 0.45 ,
+					b : 0.0
+				};
+			}
+			else {
+				return {
+					r : 0.9,
+					g : 0,
+					b : 0
+				};
+			}				
+		};
 
 		$("#effect").visualBase({
 			width : $(window).innerWidth(),
 			height : $(window).innerHeight(),
-			blockSize : 16,
-			maxWidth: 50,
-			tint : function(x) {
-				if (x > 100) {
-					return {
-						r : 0.0,
-						g : 0.7,
-						b : 0.7
-					};
+			blockSize : 8,
+			maxWidth: 100,
+			maxHeight: 30,
+			tint : red
+		});		
 
-				}
-				else if (x > 50) {
-					return {
-						r : 0.0,
-						g : 0.45 ,
-						b : 0.9
-					};
-				}
-				else {
-					return {
-						r : 0.0,
-						g : 0.0,
-						b : 1
-					};
-				}
-			}
+		$("#notice").visualBase({
+			width : $(window).innerWidth(),
+			height : $(window).innerHeight(),
+			blockSize : 8,
+			maxWidth: 100,
+			maxHeight: 50,
+			containerId : "notice", 
+			fire : false,
+			iterate : false,
+			plugins : [
+				new Plugins.Notice({})
+			],
+			tint : blue
 		});		
 	}
 
@@ -107,24 +132,4 @@
 //		red flames
 // ----
 //
-// if (x > 100) {
-// 	return {
-// 		r : 0.9,
-// 		g : 0.9,
-// 		b : 0.0
-// 	};
-// }
-// else if (x > 50) {
-// 	return {
-// 		r : 0.9,
-// 		g : 0.45 ,
-// 		b : 0.0
-// 	};
-// }
-// else {
-// 	return {
-// 		r : 0.9,
-// 		g : 0,
-// 		b : 0
-// 	};
-// }
+
