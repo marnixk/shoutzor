@@ -87,8 +87,8 @@
 				row.append(options);
 
 				// click on row triggers vote.
-				row.click(function() {
-					$(this).find("a").click();
+				row.click(function(evt) {
+					$(this).find("a").trigger('click');
 					return false;
 				});
 
