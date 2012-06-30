@@ -18,6 +18,7 @@ Shoutzor::Application.routes.draw do
   get :now_playing, :action => :now_playing, :controller => :status
 
   get :html, :action => :html, :controller => :application
+  get :loginhtml, :action => :loginhtml, :controller => :application
   get :test, :action => :test, :controller => :application
 
   #

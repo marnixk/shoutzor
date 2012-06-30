@@ -28,7 +28,6 @@ body.fire {
 	font-family: Verdana;
 }
 
-
 #visual {
 	margin-bottom: 4em;
 	background-color: #191919;
@@ -44,7 +43,7 @@ body.fire {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		box-shadow: inset 0 0 100px black;
+		// box-shadow: inset 0 0 100px black;
 		z-index: 2;
 	}
 
@@ -89,6 +88,16 @@ body.fire {
 	}
 }
 
+
+.loginpage #visual {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
 #songlist {
 	table {
 		width: 100%;
@@ -131,7 +140,7 @@ body.fire {
 			padding-top: 1.0em;
 			padding-bottom: 1.0em;
 			border-top: 1px solid transparent;
-			color: #eee;
+			color: #ddd;
 			font-size: 1.2em;
 			line-height: 1.5em;
 		}
@@ -156,7 +165,7 @@ body.fire {
 			border-top: 1px solid $light;
 
 			cursor: pointer;
-			color: black;
+			color: white;
 		}
 	}
 }

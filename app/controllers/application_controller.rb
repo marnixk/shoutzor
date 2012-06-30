@@ -19,7 +19,11 @@ class ApplicationController < ActionController::Base
  		render :layout => "htmlbase"
  	end
 
- 	 def test
+ 	def loginhtml
+ 		render :layout => "login"
+ 	end
+
+ 	def test
  		render :layout => "htmlbase2"
  	end
 

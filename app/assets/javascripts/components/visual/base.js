@@ -19,16 +19,20 @@
 			blockMargin : 0,
 			roundness : 0,
 
-			maxWidth: 1000,
+			maxWidth: 200,
 
 			// when to increase animation frame
-			frameEveryMs : 10,
+			frameEveryMs : 25,
 
 			// when to draw
-			drawEveryMs : 25,
+			drawEveryMs : 100,
 
 			// random size
 			randomSize : 1024,
+
+			width : $("#visual").innerWidth(),
+
+			height : $("#visual").innerHeight(),
 
 			tint : function(x) {
 				// blue
@@ -54,8 +58,8 @@
 			$this.element = $(this.element);
 
 			$("#effect").attr({ 
-					"width" : $("#visual").innerWidth(),
-					"height" : $("#visual").innerHeight()
+					"width" : $this.options.width,
+					"height" : $this.options.height
 				});
 
 			$this.canvas = document.getElementById("effect").getContext("2d");
@@ -91,7 +95,7 @@
 			$this._generateBlocks();
 
 			$this.canvas.fillStyle = "black";
-			$this.canvas.fillRect(0, 0, $("#visual").innerWidth(), $("#visual").innerHeight());
+			$this.canvas.fillRect(0, 0, $this.options.width, $this.options.height);
 
 
 			// make sure animation stops when window loses focus
@@ -238,13 +242,11 @@
 			
 			// iterate bottom
 			for (var x = 0; x < $this.width; ++x) {
-				// if (x >= skipMargin && x <= $this.width - skipMargin) {
-					$this.matrix[offset] = 16 + Math.ceil($this.random[baton.seed % baton.rSize] * 128);
+				$this.matrix[offset] = 16 + Math.ceil($this.random[baton.seed % baton.rSize] * 200);
 
-					var b = $this.blocks[offset];
-					$this.canvas.fillStyle = $this.colors[$this.matrix[offset]];
-					$this.canvas.fillRect(b.x, b.y, b.w, b.h);
-				// }
+				var b = $this.blocks[offset];
+				$this.canvas.fillStyle = $this.colors[$this.matrix[offset]];
+				$this.canvas.fillRect(b.x, b.y, b.w, b.h);
 
 				++offset;
 				++baton.seed;

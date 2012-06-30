@@ -48,8 +48,9 @@
 					visual.width, 
 					visual.height, 
 					"Hello Chelsey,\n" +
-					"Isn't this a love-\n" +
-					"ly way to read\ntext? \n\n" +
+					"Isn't this a \n" +
+					"lovely way to\n" +
+					"read text? \n\n" +
 					"        - Leeuw"
 				);
 

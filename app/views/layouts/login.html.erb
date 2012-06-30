@@ -5,22 +5,11 @@
 		<%= stylesheet_link_tag "application", :media => "all" %>
 		<%= csrf_meta_tags %>
 	</head>
-	<body class="fire searchpage">
+	<body class="fire loginpage">
 
-		<%= render :partial => "/shared/visual" %>
-	
-		<div id="search-container">
-			<%= render :partial => "/application/search" %>
+		<div class="fulleffect">
+			<canvas id="effect"></canvas>
 		</div>
-
-
-
-		<div class="container_12">
-			<div class="grid_12">
-				<%= yield %>
-			</div>
-		</div>
-
 
 		<%= javascript_include_tag "application" %>
 	</body>
