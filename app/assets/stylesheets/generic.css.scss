@@ -270,6 +270,9 @@ button {
 		}
 
 	}
+
+	::-webkit-input-placeholder { color: #222; }
+	input:-moz-placeholder { color: #222; }
 }
 
 #search-container {

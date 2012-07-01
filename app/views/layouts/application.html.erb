@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Shoutzor - Class '12 - <%= yield :pagetitle %></title>
-		<%= stylesheet_link_tag "application", :media => "all" %>
-		<%= csrf_meta_tags %>
-	</head>
+
+	<%= render :partial => "/shared/head" %>
+	
 	<body class="fire searchpage">
 
 		<%= render :partial => "/shared/visual" %>

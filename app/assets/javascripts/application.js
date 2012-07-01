@@ -17,6 +17,9 @@
 
 //= require lib/raphael-min
 
+//= require bitmaps/class-logo-bitmap
+//= require bitmaps/scn-logo-bitmap
+
 //= require components/playerstatus
 //= require components/songlist
 //= require components/search
@@ -28,6 +31,11 @@
 //= require components/visual/fuel-plugin
 //= require components/visual/scroller-plugin
 //= require components/visual/notice-plugin
+//= require components/visual/bitmap-plugin
 //= require components/visual/vgafont
 
+//= require pages/loginpage
+//= require pages/searchpage
+
 //= require behavior
+

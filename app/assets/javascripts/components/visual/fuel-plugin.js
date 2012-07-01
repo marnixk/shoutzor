@@ -9,8 +9,8 @@
 		 * Create a new Notice
 		 */
 		Fuel : function(options) {
-			for (var idx in Plugins.FueldObject) {
-				this[idx] = Plugins.FueldObject[idx];
+			for (var idx in Plugins.FuelObject) {
+				this[idx] = Plugins.FuelObject[idx];
 			}
 			this._construct($.extend(this.defaults, options));
 			return this;
@@ -19,7 +19,7 @@
 		/**
 		 * Text scroller object implementation
 		 */
-		FueldObject : { 
+		FuelObject : { 
 
 			/**
 			 * Default options

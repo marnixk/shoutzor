@@ -50,7 +50,7 @@ class AuthenticationController < ApplicationController
         user.save
         user.send_notification
 
-        redirect_to "/login?registered=true", :notice => "Check your e-mail and use your PIN to login below", :success => true
+        redirect_to "/login?registered=true", :success => true
     else
         redirect_to "/login", :alert => "An account with this information exists"
     end
