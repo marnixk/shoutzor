@@ -39,6 +39,9 @@
 			// random size
 			randomSize : 1024,
 
+			copyRatio : 0.6,
+			copyMargin : 0.2,
+
 
 			tint : function(x) {
 				return {
@@ -206,7 +209,7 @@
 
 						var avg = 
 							Math.floor(
-								(0.8 + 0.2 * $this.random[baton.seed % baton.rSize]) * 
+								($this.options.copyRatio + $this.options.copyMargin * $this.random[baton.seed % baton.rSize]) * 
 								0.33 * (
 										$this.matrix[nextRow - 1] + 
 										$this.matrix[nextRow] + 

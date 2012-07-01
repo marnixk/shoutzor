@@ -36,7 +36,7 @@
 			 */
 			reset : function(visual, world) {
 				this.row = 0;
-				this.startFrame = 0;
+				this.startFrame = world? world.frame : 0;
 			},
 
 			/**
@@ -71,6 +71,11 @@
 						++pixelOffset;
 						++matrixOffset;
 					}
+				}
+
+
+				if (this.row > this.bitmap.height && this.done) {
+					this.done();
 				}
 
 			}

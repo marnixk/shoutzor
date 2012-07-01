@@ -32,6 +32,7 @@
 //= require components/visual/scroller-plugin
 //= require components/visual/notice-plugin
 //= require components/visual/bitmap-plugin
+//= require components/visual/composite-plugin
 //= require components/visual/vgafont
 
 //= require pages/loginpage

@@ -56,6 +56,8 @@
 			blockSize : 8,
 			maxWidth: 100,
 			maxHeight: 30,
+			copyRatio : 0.8,
+			copyMargin: 0.1,
 			tint : blue,
 			transparent: true,
 			plugins : [ new Plugins.Fuel({}) ]

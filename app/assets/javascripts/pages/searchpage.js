@@ -18,42 +18,53 @@
 		});
 
 		$("#effect").visualBase({
+			copyRatio : 0.8,
+			copyMargin: 0.1,
 			plugins : [
 				new Plugins.Fuel({}),
-				new Plugins.Bitmap({bitmap : 'SCNLogo'})
-/*
-				new Plugins.TextScroller({
-					instructions : [
+				new Plugins.Composite({
+					mode : "sequential",
+					parts : [
+						// new Plugins.Bitmap({bitmap : "SCNLogo"}),
+						
+
 						// introduction text
-						{
-							text : "welcome to _\nCLASS '12!",
+						new Plugins.TextScroller({
+							text : "  welcome  to \n  CLASS 2012!",
 							effects : [ 
 								['up'], ['wait', {delay: 3000}], ['hide']
 							]
-						},
+						}),
+
+						// class logo
+						new Plugins.Bitmap({bitmap : 'ClassLogo'}),
 
 						// where to upload to
-						{
+						new Plugins.TextScroller({
 							text : "upload files to _\n\\\\shoutzor.com",
 							effects : [ 
 								['up'], ['wait', {delay: 1500}], ['hide']
 							]
-						},
+						}),
 
-						{
-							type : 'pattern',
-							pattern : [],
-							effects : [ ['pulsate'] ]
-						},
+						// new Plugins.TextScroller({
+						// 	type : 'pattern',
+						// 	pattern : [],
+						// 	effects : [ ['pulsate'] ]
+						// }),
 
-						// when: at end of song
-						// show: coming up next
-						{
-							when : function() { return false;  },
-							text : function() { return 'coming up next: NextSong'; },
-							effects : [ ['left'] ]
-						}
+						// // when: at end of song
+						// // show: coming up next
+						// new Plugins.TextScroller({
+						// 	when : function() { return false;  },
+						// 	text : function() { return 'coming up next: NextSong'; },
+						// 	effects : [ ['left'] ]
+						// })
 					]
+				})
+/*
+				new Plugins.TextScroller({
+					
 				})
 				 */
 			]

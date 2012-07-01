@@ -32,28 +32,54 @@
 			 * Construct the scroller
 			 */
 			_construct : function(options) {
-				this.banner = new TextBanner({});
-				this.options = options;
+				var $this = this;
+
+				$this.banner = new TextBanner({});
+				$this.text = options.text;
+
+				$this.nLines = 1;
+				for (var idx = 0; idx < $this.text.length; ++idx) {
+					if ($this.text[idx] == "\n") {
+						++$this.nLines;
+					}
+				}
+
+				this.reset();
+			},
+
+			/**
+			 * Reset the scroller object
+			 */
+			reset : function(visual, world) {
+				this.startFrame = world? world.frame : 0;
 			},
 
 			/**
 			 * Execute the scroller
 			 */
 			execute : function(visual, world) {
+				var 
+					deltaFrame = world.frame - this.startFrame,
+					startY = visual.height - Math.floor(deltaFrame * 0.4),
+					showY = startY;
+
+				if (startY < 4) {
+					showY = 4;
+				}
 
 				this.banner.printString(
 					visual.matrix, 
 					Math.floor((visual.width / 2) - 65),
-					visual.height - Math.floor(world.frame * 0.5),
+					showY,
 					visual.width, 
 					visual.height, 
-					"Hello Chelsey,\n" +
-					"Isn't this a \n" +
-					"lovely way to\n" +
-					"read text? \n\n" +
-					"        - Leeuw"
+					this.text
 				);
 
+
+				if (startY < -this.nLines * 16 && this.done) {
+					this.done();
+				}
 			}
 		}
 
