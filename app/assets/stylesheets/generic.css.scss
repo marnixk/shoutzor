@@ -1,9 +1,9 @@
 
 // orange style
-// $light: #FFb300; 
+$orange-light: #FFb300; 
 
 // blue style
-// $light: rgb(0, 150, 255); 
+$blue-light: rgb(0, 150, 255); 
 
 // green style
 $light: rgb(100, 200, 100); 
@@ -26,6 +26,41 @@ body {
 body.fire {
 	background-color: $background;
 	font-family: Verdana;
+}
+
+button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	color: black;
+	padding: 4px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#999999 0%,
+		#808080);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#999999),
+		to(#808080));
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #666666;
+	-moz-box-shadow:
+		0px 2px 1px rgba(102,102,102,0.4),
+		inset 0px 1px 1px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 2px 1px rgba(102,102,102,0.4),
+		inset 0px 1px 1px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 1px rgba(000,000,000,0.3),
+		0px 1px 0px rgba(255,255,255,0.3);
+
+	cursor: pointer;
+
+	&:hover {
+		background: none;
+		background-color: #aaa;
+	}
 }
 
 #visual {
@@ -86,35 +121,6 @@ body.fire {
 		}
 
 	}
-}
-
-body.fire.loginpage {
-	background: black;
-}
-
-
-.loginpage #visual {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-
-.loginpage .bottomeffect {
-	position: absolute;
-	bottom: -20px;
-	height: 240px;
-	left: 0;
-	right: 0;
-}
-
-.loginpage .notice {
-	position: absolute;
-	top: 0;
-	height: 300px;
-	left: 0;
-	right: 0;
 }
 
 
@@ -242,6 +248,26 @@ body.fire.loginpage {
 	}
 }
 
+@mixin fancy-input($size, $width, $pad) {
+	input[type='text'],
+	input[type='email'] {
+		font-size: $size;
+		background-color: $input-color;
+		border: 1px solid $input-border-color;
+		padding: 0.5em;
+		padding-top: $pad;
+		padding-bottom: $pad;
+		box-shadow: inset 0 0 5px black;
+		color: white;
+		width: $width;
+
+		&:focus {
+			outline: none;
+		}
+
+	}
+}
+
 #search-container {
 	position: absolute;
 	top: $visual-height - 60px;
@@ -255,26 +281,121 @@ body.fire.loginpage {
 		border-top: 1px solid $light;
 		background-color: $background;
 
-		input[type='text'] {
-			font-size: 1.5em;
-			background-color: $input-color;
-			border: 1px solid $input-border-color;
-			padding: 0.5em;
-			padding-top: 0.2em;
-			padding-bottom: 0.2em;
-			box-shadow: inset 0 0 5px black;
-			color: white;
-			width: 250px;
+		@include fancy-input(1.5em, 250px, 0.2em);
+	}
+}
 
-			&:focus {
-				outline: none;
-			}
 
-			&::-webkit-input-placeholder,
-			&:-moz-placeholder {
-				color: blue;
-			}
+
+body.fire.loginpage {
+	background: #000; 
+	
+	#visual {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.login-container {
+		position: absolute;
+		left: 50%;
+		margin-left: -202px;
+		height: 240px;
+		width: 404px;
+		top: 50px;		
+
+		canvas {
+			position: relative;
+			z-index: 5;
 		}
 
+		#loginbox {
+			position: relative;
+			margin-top: -20px;
+			background-color: $background;
+			z-index: 10;
+
+			border-top: 2px solid $blue-light;
+			border-bottom: 2px solid $blue-light;
+			padding: 2em;
+			box-shadow: 0 0 50px darken($blue-light, 40%);
+
+			h2 {
+				color: white;
+				padding-top: 0.5em;
+				padding-bottom: 1em;
+			}
+
+			h2 span {
+				font-size: 2.5em;
+				font-family: "OpenSansCondensedLight", Arial, Helvetica;
+			}
+
+			p {
+				font-size: 1.2em;
+				font-family: Arial, Helvetica;
+				color: #888;
+				margin-bottom: 1em;
+				line-height: 1.8em;
+			}
+
+			.field {
+
+				margin-bottom: 0.5em;
+
+				label {
+					color: #999;
+					font-size: 1.2em;
+					float: left;
+					width: 100px;
+					padding-top: 10px;
+					font-family: Arial, Helvetica;
+				}
+
+				@include fancy-input(1.3em, 249px, 0.5em);
+			}
+
+			.no-account {
+				margin-top: 4em;
+			}
+
+			.buttoncontainer {
+				width: 364px;
+
+				button {
+					float: right;
+				}
+			}
+
+
+			.flash {
+				border-radius: 5px;
+				padding: 2em;
+				padding-top: 1em;
+				padding-bottom: 1em;
+				color: #ddd;
+			}
+
+			.notice {
+				background-color: #3B7C43;
+			}
+
+			.alert {
+				background-color: #7C3838;
+
+			}
+
+		}
+
+		.copyright {
+			text-align: center;
+			margin-top: 1em;
+			font-family: "OpenSansCondensedLight", Arial;
+			font-size: 1.5em;
+			color: #888;
+		}
 	}
+
 }

@@ -12,25 +12,29 @@ module Player
 		#
 		# Initialize data-members
 		#
-		def initialize
+		def initialize(play_music)
 			@current_song = nil
 			@player_pid = nil
 			@song_started_at = nil
 			@tick = 0
+			@play_music = play_music
 		end
 
 		# 
 		# Play a song
 		#
 		def play(song)
-			# reset tick
-			@tick = 0
 
-			# set song
-			@song = song
-			@song_started_at = Time.now
-			# start song
-			@player_pid = spawn("/usr/bin/mplayer", "#{song.file}", :in => "/dev/null", :out => "/dev/null")
+			if @play_music then 
+				# reset tick
+				@tick = 0
+
+				# set song
+				@song = song
+				@song_started_at = Time.now
+				# start song
+				@player_pid = spawn("/usr/bin/mplayer", "#{song.file}", :in => "/dev/null", :out => "/dev/null")
+			end
 		end
 
 		#

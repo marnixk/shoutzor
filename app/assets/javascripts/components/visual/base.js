@@ -15,38 +15,32 @@
 			plugins : [],
 
 			containerId : "effect",
+			width : $("#visual").innerWidth(),
+			height : $("#visual").innerHeight(),
+
+			// scene properties
 			fire: true,
 			iterate: true,
+			transparent : false,
 
 			// grid properties
 			blockSize : 8,
 			blockMargin : 0,
 			roundness : 0,
 
+			// maximum dimensions in blocks
 			maxWidth: 200,
 			maxHeight: -1,
 
-			// when to increase animation frame
+			// frame duration
 			frameEveryMs : 25,
-
-			// when to draw
 			drawEveryMs : 100,
 
 			// random size
 			randomSize : 1024,
 
-			width : $("#visual").innerWidth(),
-
-			height : $("#visual").innerHeight(),
 
 			tint : function(x) {
-				// blue
-				// return {
-				// 	r : 0.1,
-				// 	g : 0.4,
-				// 	b : 0.9
-				// };
-
 				return {
 					r : 0.1,
 					g : 0.9,
@@ -100,8 +94,10 @@
 
 			$this._generateBlocks();
 
-			$this.canvas.fillStyle = "black";
-			$this.canvas.fillRect(0, 0, $this.options.width, $this.options.height);
+			if (!$this.options.transparent) {
+				$this.canvas.fillStyle = "black";
+				$this.canvas.fillRect(0, 0, $this.options.width, $this.options.height);
+			}
 
 
 			// make sure animation stops when window loses focus
@@ -179,13 +175,10 @@
 
 			$this._iterateMatrix(baton);
 
-			if ($this.options.fire) {
-				$this._fuelBottom(baton);
-			}
-
 			for (var idx in $this.options.plugins) {
 				$this.options.plugins[idx].execute(
 							$this, {
+								baton : baton,
 								frame : $this.frameNumber
 							}
 						);
@@ -237,29 +230,6 @@
 				++offset;
 			}
 		},
-
-		/**
-		 * Fuel the buttom
-		 */
-		_fuelBottom : function(baton) {
-
-			// set new values for the bottom
-			var 
-				$this = this,
-				offset = ($this.height - 1) * $this.width;
-			
-			// iterate bottom
-			for (var x = 0; x < $this.width; ++x) {
-				$this.matrix[offset] = 16 + Math.ceil($this.random[baton.seed % baton.rSize] * 200);
-
-				var b = $this.blocks[offset];
-				$this.canvas.fillStyle = $this.colors[$this.matrix[offset]];
-				$this.canvas.fillRect(b.x, b.y, b.w, b.h);
-
-				++offset;
-				++baton.seed;
-			}
-		}
 
 	});
 

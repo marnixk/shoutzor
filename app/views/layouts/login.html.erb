@@ -7,12 +7,14 @@
 	</head>
 	<body class="fire loginpage">
 
-		<div class="notice">
-			<canvas id="notice"></canvas>
-		</div>
-
-		<div class="bottomeffect">
+		<div class="login-container">
 			<canvas id="effect"></canvas>
+			<div id="loginbox">
+				<%= yield %>
+			</div>
+			<p class="copyright">
+				Shoutzor 2012 &copy; Marnix Kok
+			</p>
 		</div>
 
 		<%= javascript_include_tag "application" %>

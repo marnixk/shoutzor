@@ -5,14 +5,13 @@
 <% end %>
 
 <div class="form"> 
-	<h2>Ik heb een account</h2>
+	<h2><span>Got an account!</span></h2>
 	<p>
-		Heb je al een account? Log dan met onderstaand formulier in.
+		Already got an account? Use your user credentials to login below.
 	</p>
 
-	<form action="/authenticate" method="post">
+	<form action="/authenticate" method="post" autocomplete="off">
 		<fieldset>
-			<legend>Login</legend>
 
 			<% if not flash[:alert].nil? %>
 				<p class="flash alert">
@@ -28,33 +27,38 @@
 				<label for="pin">PIN-code</label>
 				<input type="text" name="pin" id="pin" value="" placeholder="Vul je pincode in" />
 			</div>
-			<button type="submit">Login</button>
+			<div class="buttoncontainer">
+				<button type="submit">Login</button>
+			</div>
 		</fieldset>
 	</form>
 </div>
 
-<div class="form">
-	<h2>Accountloos</h2>
-	<p>
-		Als je nog geen account hebt maak je er eerst even een aan, je krijgt dan een pin-code toegestuurd
-		die je kan gebruiken om een liedje aan te vragen.
-	</p>
+<div class="no-account">
+	<div class="form">
+		<h2><span>Need an account &hellip;</span></h2>
+		<p>
+			If you haven't got an account yet make sure to create one first. I'll mail you a PIN-code you can use
+			in the form above.
+		</p>
 
-	<form action="/request_pin" method="post">
-		<fieldset>
-			<legend>Nog geen account</legend>
+		<form action="/request_pin" method="post" autocomplete="off">
+			<fieldset>
 
-			<div class="field">
-				<label for="name">Name</label>
-				<input type="text" name="name" id="name" value="" placeholder="Naam" />
-			</div>
-			<div class="field">
-				<label for="email">E-mail</label>
-				<input type="text" name="email" id="email" value="" placeholder="Vul je e-mail adres in" />
-			</div>
-			<button type="submit">Login</button>
-		</fieldset>
-	</form>
+				<div class="field">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" value="" placeholder="Naam" />
+				</div>
+				<div class="field">
+					<label for="email">E-mail</label>
+					<input type="email" name="email" id="email" value="" placeholder="Vul je e-mail adres in" />
+				</div>
+				<div class="buttoncontainer">
+					<button type="submit">Register</button>
+				</div>
+			</fieldset>
+		</form>
 
 
+	</div>
 </div>

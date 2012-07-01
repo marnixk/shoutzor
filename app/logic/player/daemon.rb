@@ -12,11 +12,11 @@ module Player
 		#
 		#  Jukebox cycle
 		#
-		def daemonize
+		def daemonize(play_music)
 
 			# initialize vars
 			volume = Player::VolumeControl.new
-			player = Player::MusicControl.new
+			player = Player::MusicControl.new(play_music)
 			@jukebox = Player::Jukebox.new(volume, player)
 
 			# make music cycle run every second inside a thread

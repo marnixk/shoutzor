@@ -11,6 +11,8 @@
 
 		$("#effect").visualBase({
 			plugins : [
+
+				new Plugins.Fuel({}),
 				new Plugins.TextScroller({
 					instructions : [
 						// introduction text
@@ -102,34 +104,18 @@
 		};
 
 		$("#effect").visualBase({
-			width : $(window).innerWidth(),
-			height : $(window).innerHeight(),
+			width : 404,
+			height : 250,
 			blockSize : 8,
 			maxWidth: 100,
 			maxHeight: 30,
-			tint : red
+			tint : blue,
+			transparent: true,
+			plugins : [ new Plugins.Fuel({}) ]
 		});		
 
-		$("#notice").visualBase({
-			width : $(window).innerWidth(),
-			height : $(window).innerHeight(),
-			blockSize : 8,
-			maxWidth: 100,
-			maxHeight: 50,
-			containerId : "notice", 
-			fire : false,
-			iterate : false,
-			plugins : [
-				new Plugins.Notice({})
-			],
-			tint : blue
-		});		
+			
 	}
 
 })(jQuery);
-
-// ----
-//		red flames
-// ----
-//
 

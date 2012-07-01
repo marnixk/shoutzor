@@ -4,6 +4,7 @@ class AuthenticationController < ApplicationController
   # Login
   #
   def login
+    render :layout => "login"
   end
 
   #
