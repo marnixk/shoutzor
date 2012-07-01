@@ -3,10 +3,12 @@
 	# now playing
 	#
 %>
-<div id="status" data-status="<%= status.to_json %>">
-	<div class="now-playing">
-		Now playing: 
-		<span class="name">&nbsp;</span>
-		(<span class="length">&nbsp;</span>)
+<div class="hide">
+	<div id="status" data-status="<%= status.to_json %>">
+		<div class="now-playing">
+			Now playing: 
+			<span class="name">&nbsp;</span>
+			(<span class="length">&nbsp;</span>)
+		</div>
 	</div>
 </div>

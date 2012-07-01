@@ -5,13 +5,16 @@
 			"path": "/home/marnix/Programming/git/shoutzor"
 		},
 		{
-			"path": "app/assets"
+			"path": "app"
+		},
+		{
+			"path": "app/logic"
 		},
 		{
 			"path": "app/views"
 		},
 		{
-			"path": "app/logic"
+			"path": "app/assets"
 		}
 	]
 }

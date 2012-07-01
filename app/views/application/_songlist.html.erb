@@ -10,19 +10,15 @@
 					<th class="album">Album</th>
 					<th class="artist">Artist</th>
 					<th class="tracklength">Length</th>
-					<th class="options">&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% list.each_with_index do |row, idx| %>
-					<tr class="<%= idx % 2 == 0 ? 'even' : 'odd' %>">
+					<tr class="<%= idx % 2 == 0 ? 'even' : 'odd' %>" data-vote-url="<%= url_for :action => :vote_for, :controller => :vote, :id => row.id %>">
 						<td class="title"><%= row.title %></td>
 						<td><%= row.artist %></td>
 						<td><%= row.album %></td>
-						<td><%= row.track_length %></td>
-						<td>
-							<%= link_to "vote", {:action => :vote_for, :controller => :vote, :id => row.id}, :remote => true %>
-						</td>
+						<td class="tracklength"><%= row.track_length %></td>
 					</tr>
 				<% end %>
 			</tbody>

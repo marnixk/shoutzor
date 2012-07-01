@@ -4,13 +4,17 @@
 	</p>
 <% end %>
 
+<% if not params['registered'].blank? then %>
+	<p class="flash notice">Check your e-mail and use your PIN to login below</p>
+<% end %>
+
 <div class="form"> 
 	<h2><span>Got an account!</span></h2>
 	<p>
 		Already got an account? Use your user credentials to login below.
 	</p>
 
-	<form action="/authenticate" method="post" autocomplete="off">
+	<form action="/authenticate" method="post" autocomplete="off" data-remote="true" id="login-form">
 		<fieldset>
 
 			<% if not flash[:alert].nil? %>
@@ -42,8 +46,14 @@
 			in the form above.
 		</p>
 
-		<form action="/request_pin" method="post" autocomplete="off">
+		<form action="/request_pin" method="post" autocomplete="off" data-remote="true" id="register-form">
 			<fieldset>
+
+				<% if not flash[:alert].nil? %>
+					<p class="flash alert">
+						<%= flash[:alert] %>
+					</p>
+				<% end %>
 
 				<div class="field">
 					<label for="name">Name</label>

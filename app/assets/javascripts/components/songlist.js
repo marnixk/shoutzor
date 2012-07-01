@@ -18,12 +18,32 @@
 			$this.element = $(this.element);
 
 			// wait for ajax success
-			$("table a").live("ajax:success", function(event, result) {
-				$this._showResult(result);				
+			$("table tr").live("click", function(event, result) {
+				$this._doVoteRequest($(this));
 			});
 		},
 
 
+		/**
+		 * Try to vote
+		 */
+		_doVoteRequest : function(row) {
+			var 
+				$this = this,
+				url = row.data("vote-url");
+				
+			$.get(
+				url, {},
+				function(result) {
+					$this._showResult(result);
+				},
+				"json"
+			);
+		},
+
+		/**
+		 * Show the result
+		 */
 		_showResult : function(result) {
 			if (result.status == "done") {
 				alert("You have voted");
@@ -75,20 +95,15 @@
 					row.addClass("odd");
 				} 
 
+				row.data("vote-url", "/vote_for?tstamp=" + new Date().getTime() + "&id=" + item.id);
+
 				$("<td />", { "class" : "title"}).text(item.title).appendTo(row);
 				$("<td />").text(item.album).appendTo(row);
 				$("<td />").text(item.artist).appendTo(row);
 				$("<td />", { "class" : "tracklength"} ).text(item.length).appendTo(row);
 
-				var options = $("<td/>", { "class" : "options"});
-				var vote = $("<a />", { href : "/vote_for?tstamp=" + new Date().getTime() + "&id=" + item.id, "data-remote" : "true"}).text("vote");
-				options.append(vote);
-
-				row.append(options);
-
 				// click on row triggers vote.
 				row.click(function(evt) {
-					$(this).find("a").trigger('click');
 					return false;
 				});
 

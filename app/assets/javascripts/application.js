@@ -21,6 +21,7 @@
 //= require components/songlist
 //= require components/search
 //= require components/comingup
+//= require components/remoteform
 
 //= require components/visual/base
 //= require components/visual/textbanner

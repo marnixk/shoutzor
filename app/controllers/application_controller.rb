@@ -19,17 +19,16 @@ class ApplicationController < ActionController::Base
  		render :layout => "htmlbase"
  	end
 
- 	def loginhtml
- 		render :layout => "login"
- 	end
 
- 	def test
- 		render :layout => "htmlbase2"
- 	end
+	def redirect_to(options = {}, response_status = {})
+		if request.xhr? and response_status[:success]
+			render :js => "window.location = '#{options}'"
+		else
+			super(options, response_status)
+		end
+	end
 
 	protected
-
-
 
 		#
 		# Retrieve the current user

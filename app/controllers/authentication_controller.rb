@@ -12,7 +12,7 @@ class AuthenticationController < ApplicationController
   #
   def logout
   	session[:user] = nil
-  	redirect_to "/login", :notice => "Je bent nu uitgelogd" 
+  	redirect_to "/login", :notice => "You have signed out" 
   end
 
   #
@@ -24,10 +24,10 @@ class AuthenticationController < ApplicationController
   	# valid user?
 	  if user.length == 1 then
   		session[:user] = user.first
-  		redirect_to "/", :notice => "Je bent ingelogd"
+  		redirect_to "/", :notice => "You're now logged in", :success => true
   	else
   		session[:user] = nil
-  		redirect_to "/login", :alert => "Onjuist wachtwoord"
+  		redirect_to "/login", :alert => "Incorrect username or password"
   	end
   end
 
@@ -35,6 +35,11 @@ class AuthenticationController < ApplicationController
   # Form handler for request a pin code
   #
   def request_pin
+
+    if params['email'].blank? or params['name'].blank? then
+        redirect_to "/login", :alert => "Not all fields have been filled out properly"
+        return
+    end
 
     if User.free_account?(params['email'], params['name']) then
 
@@ -45,9 +50,9 @@ class AuthenticationController < ApplicationController
         user.save
         user.send_notification
 
-        redirect_to "/login", :notice => "Check je e-mail en gebruik je pin code om in te loggen"
+        redirect_to "/login?registered=true", :notice => "Check your e-mail and use your PIN to login below", :success => true
     else
-        redirect_to "/login", :notice => "Er bestaat al een account met deze gegevens"
+        redirect_to "/login", :alert => "An account with this information exists"
     end
   end
 end

@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
 	#
 	#  Determine if this is a free account
 	#
-	def self.free_account?(name, email)
-		User.where("name = ? or email = ?", name, email).all.length == 0
+	def self.free_account?(email, name)
+		User.where("name = ? or email = ?", name, email).count == 0
 	end
 
 
