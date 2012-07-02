@@ -7,7 +7,7 @@ module Player
 
 		MaxTicksPerSong = 4 * 60 # 4 minutes
 
-		attr_accessor :song
+		attr_accessor :song, :play_music
 
 		#
 		# Initialize data-members
