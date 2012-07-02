@@ -9,6 +9,9 @@ $blue-light: rgb(0, 150, 255);
 $light: rgb(100, 200, 100); 
 $light-up: rgb(100, 255, 100);
 
+$alert-color: rgb(200, 100, 100);
+$ok-color: rgb(0, 150, 255);
+
 $input-color: #111;
 $input-border-color: #555;
 
@@ -412,6 +415,71 @@ body.fire.loginpage {
 			font-family: "OpenSansCondensedLight", Arial;
 			font-size: 1.5em;
 			color: #888;
+		}
+	}
+
+}
+
+#modal_dialog {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	.wrapper {
+		position: absolute;
+		top: 200px;
+		left: 50%;
+		margin-left: -225px;
+		width: 450px;
+		background-color: rgba(0.2, 0.2, 0.2, 0.8);
+
+		padding: 2em;
+		box-shadow: 0 0 10px black;
+
+		h2 {
+
+			font-family: "OpenSansCondensedLight", Arial;
+			margin-top: 0.5em;
+			margin-bottom: 3em;
+			color: white;
+
+			span { 
+				font-size: 2.0em; 
+				display: inline; 
+				padding-bottom: 8px; 
+				padding-right: 20px;
+				border-bottom: 1px solid $ok-color;
+			}
+		}
+
+		p {
+			font-size: 1.2em;
+			color: white;
+		}
+
+		.buttonrow {
+			margin-top: 2em;
+			float:right;
+
+			button { font-size: 1.0em; } 
+		}
+
+		&.normal {
+			border-top: 2px solid $ok-color;
+			border-bottom: 2px solid $ok-color;
+		}
+		&.error {
+			border-top: 2px solid $alert-color;
+			border-bottom: 2px solid $alert-color;
+			box-shadow: 0 0 10px $alert-color;
+
+			span { 
+				border-bottom: 1px solid $alert-color; 
+			}
 		}
 	}
 

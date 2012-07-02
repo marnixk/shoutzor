@@ -45,18 +45,42 @@
 		 * Show the result
 		 */
 		_showResult : function(result) {
+			var $this = this;
 			if (result.status == "done") {
-				alert("You have voted");
+				$this._showDialog("You have voted! Check the playlist to see when your song will play!");
 			}
 			else if (result.status == "too_soon") {
-				alert("Too soon, wait " + result.wait_for + " seconds");
+				$this._showDialog("Too soon, wait " + $this._toMinutes(result.wait_for) + " seconds!", true);
 			}
 			else if (result.status == "incomplete") {
-				alert("Stop yer tampering");
+				$this._showDialog("Stop yer tampering", true);
 			}
 			else {
-				alert("R44r.");
+				$this._showDialog("R44r.", true);
 			}
+		},
+
+		/**
+		 * Make minute notation out of seconds 
+		 */
+		_toMinutes : function(secs) {
+			if (secs > 60) {
+				return "0" + Math.floor(secs / 60) + ":" + ((secs % 60) < 10? '0' : '') + (secs % 60);
+			}
+			return secs;
+		},
+
+		_showDialog : function(text, is_error) {
+			$("#modal_dialog").data("modalDialog").show({
+					"title" : is_error ? "Did not register vote" : "Voted!",
+					"text" : text,
+					"type" : is_error ? "error" : "normal",
+					"buttons" : {
+						"done" : function() {
+							$("#modal_dialog").data("modalDialog").close();
+						}
+					}
+				});
 		},
 
 		/**
@@ -95,17 +119,13 @@
 					row.addClass("odd");
 				} 
 
-				row.data("vote-url", "/vote_for?tstamp=" + new Date().getTime() + "&id=" + item.id);
+				row.attr("data-vote-url", "/vote_for?tstamp=" + new Date().getTime() + "&id=" + item.id);
 
 				$("<td />", { "class" : "title"}).text(item.title).appendTo(row);
 				$("<td />").text(item.album).appendTo(row);
 				$("<td />").text(item.artist).appendTo(row);
 				$("<td />", { "class" : "tracklength"} ).text(item.length).appendTo(row);
 
-				// click on row triggers vote.
-				row.click(function(evt) {
-					return false;
-				});
 
 				tableBody.append(row);
 

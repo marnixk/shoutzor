@@ -17,6 +17,8 @@
 			container : "#comingUpContainer"
 		});
 
+		$("#modal_dialog").modalDialog();
+
 		$("#effect").visualBase({
 			copyRatio : 0.8,
 			copyMargin: 0.1,

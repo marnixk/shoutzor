@@ -9,5 +9,6 @@
 		Pages.LoginPage();
 	}
 
+	
 })(jQuery);
 

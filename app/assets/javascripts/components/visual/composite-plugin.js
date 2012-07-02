@@ -53,8 +53,6 @@
 			_next : function() {
 				this.activeIdx = (this.activeIdx + 1) % this.parts.length;
 
-				console.log(this.activeIdx);
-
 				if (this.parts[this.activeIdx].reset) {
 					this.parts[this.activeIdx].reset(this.current_visual, this.current_world);
 				}

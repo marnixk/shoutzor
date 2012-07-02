@@ -34,6 +34,7 @@
 //= require components/visual/bitmap-plugin
 //= require components/visual/composite-plugin
 //= require components/visual/vgafont
+//= require components/modaldialog
 
 //= require pages/loginpage
 //= require pages/searchpage
