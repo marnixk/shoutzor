@@ -18,7 +18,7 @@
 			$this.element = $(this.element);
 			$this.element.click(function() {
 				$.get(
-					"/coming_up", { 
+					"/playlist", { 
 						tstamp : new Date().getTime() 
 					}, 
 					function(result) {
@@ -35,7 +35,6 @@
 		 * Show the dialog
 		 */
 		_showDialog : function(results) {
-			console.log(results);
 		}
 	});
 

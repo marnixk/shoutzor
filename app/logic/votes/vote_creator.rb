@@ -13,8 +13,6 @@ module Votes
 
 						if song.can_vote? then
 
-							
-
 							vote = Vote.new({ :song => song, :user => current_user })
 							result = { :status => (vote.save ? :done : :error) }
 
@@ -30,6 +28,8 @@ module Votes
 				result = { :status => :too_soon, :wait_for => current_user.wait_for_seconds }
 			end
 
+			result
 		end
 
+	end
 end
