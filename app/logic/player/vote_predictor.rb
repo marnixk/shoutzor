@@ -11,7 +11,7 @@ module Player
 			seconds_left = 0
 			if jukebox.player.play_music then
 				current_song = jukebox.player.song
-				seconds_left = current_song.tracklength - jukebox.player.seconds_playing
+				seconds_left = current_song.length - jukebox.player.seconds_playing
 			end	
 
 			# find next start time
@@ -24,8 +24,10 @@ module Player
 					:model => vote,
 					:time => next_starts_at + since
 				}
+ 			
 
-				since += vote.song.length.seconds
+				since += [vote.song.length.seconds, Player::MusicControl::MaxTicksPerSong].min
+
 			end
 
 			predicted

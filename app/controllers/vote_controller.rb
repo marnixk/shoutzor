@@ -12,10 +12,10 @@ class VoteController < ApplicationController
 
 		model_list = predictions.map do |p| 
 			{ 
-				:requested_by => p.user.name, 
-				:requested_at => p.vote.created_at, 
-				:plays_at => p.time, 
-				:song => p.vote.song.to_json
+				:requested_by => p[:model].user.name, 
+				:requested_at => p[:model].created_at, 
+				:plays_at => p[:time],
+				:song => p[:model].song.to_json
 			}
 		end
 
@@ -44,12 +44,17 @@ class VoteController < ApplicationController
 				song = Song.find_by_id(params['id'].to_i)
 
 				if not song.nil? then 
-					vote = Vote.new({ :song => song, :user => current_user })
-					result = { :status => (vote.save ? :done : :error) }
 
-					# update last vote for current user
-					current_user.last_vote = Time.now
-					current_user.save
+					if song.can_vote? then
+						vote = Vote.new({ :song => song, :user => current_user })
+						result = { :status => (vote.save ? :done : :error) }
+
+						# update last vote for current user
+						current_user.last_vote = Time.now
+						current_user.save
+					else
+						result = { :status => :played_recently }
+					end
 				end
 			end
 		else

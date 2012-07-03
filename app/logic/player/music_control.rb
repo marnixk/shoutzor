@@ -29,9 +29,13 @@ module Player
 				# reset tick
 				@tick = 0
 
+				song.last_played = Time.now
+				song.save
+
 				# set song
 				@song = song
 				@song_started_at = Time.now
+
 				# start song
 				@player_pid = spawn("/usr/bin/mplayer", "#{song.file}", :in => "/dev/null", :out => "/dev/null")
 			end

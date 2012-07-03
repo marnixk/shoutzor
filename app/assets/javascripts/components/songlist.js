@@ -47,16 +47,19 @@
 		_showResult : function(result) {
 			var $this = this;
 			if (result.status == "done") {
-				$this._showDialog("You have voted! Check the playlist to see when your song will play!");
+				$this._showDialog("Voted!", "You have voted! Check the playlist to see when your song will play!");
+			}
+			else if (result.status == "played_recently") {
+				$this._showDialog("It's really not that great.", "This song has been played recently, please pick another. Check the history when it was last played. A song can be played once an hour!", true)
 			}
 			else if (result.status == "too_soon") {
-				$this._showDialog("Too soon, wait " + $this._toMinutes(result.wait_for) + " seconds!", true);
+				$this._showDialog("Greedy!", "Too soon, wait " + $this._toMinutes(result.wait_for) + " seconds!", true);
 			}
 			else if (result.status == "incomplete") {
-				$this._showDialog("Stop yer tampering", true);
+				$this._showDialog("Don't tempt me boy.", "Stop yer tampering", true);
 			}
 			else {
-				$this._showDialog("R44r.", true);
+				$this._showDialog("WTfz?!", "R44r.", true);
 			}
 		},
 
@@ -70,9 +73,9 @@
 			return secs;
 		},
 
-		_showDialog : function(text, is_error) {
+		_showDialog : function(title, text, is_error) {
 			$("#modal_dialog").data("modalDialog").show({
-					"title" : is_error ? "Did not register vote" : "Voted!",
+					"title" : title,
 					"text" : text,
 					"type" : is_error ? "error" : "normal",
 					"buttons" : {

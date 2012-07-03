@@ -1,5 +1,7 @@
 class Song < ActiveRecord::Base
 
+	MaxWaitUntilSongAgain = 1.hour
+
 	attr_accessible :title, :album, :file, :last_played, :track, :artist, :length
   	
 	has_many :votes
@@ -13,6 +15,12 @@ class Song < ActiveRecord::Base
 	# search for a song with text in field
 	scope :search_by, lambda { |q, field| where("#{field} LIKE ?", "%#{q}%") }
 
+	#
+	#  Determine whether we can vote for this song
+	#
+	def can_vote?
+		self.last_played.nil? or self.last_played < Time.now - MaxWaitUntilSongAgain
+	end
 
 	def self.autocomplete_for(term)
 		result = []
