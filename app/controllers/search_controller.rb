@@ -15,7 +15,7 @@ class SearchController < ApplicationController
 		results = 	if %w(title artist album).include?(params['by']) then
 						Song.search_by(params['query'], params['by'])
 					else
-						Song.search(params['query'])
+						Song.search_all(params['query'])
 					end
 
 		small = results.map { |song| song.to_json }

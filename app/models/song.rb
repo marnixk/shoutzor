@@ -10,7 +10,7 @@ class Song < ActiveRecord::Base
 	scope :random_song, lambda { order("RANDOM()").limit(1) }
 
 	# search for song with specific text
-	scope :search, lambda { |q| where("title LIKE ? or artist LIKE ? or album LIKE ?", "%#{q}%", "%#{q}%", "%#{q}%") }
+	scope :search_all, lambda { |q| where("title LIKE ? or artist LIKE ? or album LIKE ?", "%#{q}%", "%#{q}%", "%#{q}%") }
 
 	# search for a song with text in field
 	scope :search_by, lambda { |q, field| where("#{field} LIKE ?", "%#{q}%") }

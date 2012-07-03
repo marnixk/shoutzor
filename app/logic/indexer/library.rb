@@ -19,6 +19,7 @@ module Indexer
 		# 
 		def add_to_library(files)
 			files = Array(files)
+			puts "adding: #{files}"
 			files.each do |file|
 				song = @analyzer.analyze(file)
 				song.save
@@ -30,7 +31,10 @@ module Indexer
 		#
 		def remove_from_library(files)
 			files = Array(files)
-			Song.where(:file => files).all.delete
+			if not files.empty? then
+				Song.where(:file => files).delete_all
+			end
+
 		end
 
 	end

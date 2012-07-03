@@ -15,11 +15,6 @@ class ApplicationController < ActionController::Base
  	end
 
 
- 	def html
- 		render :layout => "htmlbase"
- 	end
-
-
 	def redirect_to(options = {}, response_status = {})
 		if request.xhr? and response_status[:success]
 			render :js => "window.location = '#{options}'"

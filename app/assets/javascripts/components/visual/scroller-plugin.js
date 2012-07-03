@@ -60,7 +60,7 @@
 			execute : function(visual, world) {
 				var 
 					deltaFrame = world.frame - this.startFrame,
-					startY = visual.height - Math.floor(deltaFrame * 0.3),
+					startY = visual.height - Math.floor(deltaFrame * 0.5),
 					showY = startY;
 
 				if (startY < 4) {

@@ -27,7 +27,7 @@
 				new Plugins.Composite({
 					mode : "sequential",
 					parts : [
-						// new Plugins.Bitmap({bitmap : "SCNLogo"}),
+						new Plugins.Bitmap({bitmap : "SCNLogo"}),
 						
 
 						// introduction text
@@ -48,6 +48,7 @@
 								['up'], ['wait', {delay: 1500}], ['hide']
 							]
 						}),
+
 
 						// new Plugins.TextScroller({
 						// 	type : 'pattern',

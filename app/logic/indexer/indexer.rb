@@ -19,7 +19,7 @@ module Indexer
 		def index_check
 			Rails.logger.info "Starting full index check"
 
-			Dir.glob(@listen_to + "/*/**") do |f|
+			Dir.glob(@listen_to + "/**") do |f|
 				if @analyzer.should_index?(f) and not @library.indexed?(f) then
 					song = @analyzer.analyze(f)
 					song.save
@@ -39,7 +39,7 @@ module Indexer
 			Rails.logger.info "Listening for changes"
 
 			something_changed = Proc.new do |modified, added, removed|
-				Rails.logger.info "Detected changes"
+				Rails.logger.info "Detected changes: #{modified}, #{added}, #{removed}"
 				@library.remove_from_library(removed)
 				@library.add_to_library(added)
 			end

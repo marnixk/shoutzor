@@ -33,8 +33,8 @@
 			maxHeight: -1,
 
 			// frame duration
-			frameEveryMs : 16,
-			drawEveryMs : 75,
+			frameEveryMs : 50,
+			drawEveryMs : 100,
 
 			// random size
 			randomSize : 1024,
