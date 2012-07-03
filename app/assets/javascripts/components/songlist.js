@@ -52,6 +52,9 @@
 			else if (result.status == "played_recently") {
 				$this._showDialog("It's really not that great.", "This song has been played recently, please pick another. Check the history when it was last played. A song can be played once an hour!", true)
 			}
+			else if (result.status == "already_in_playlist") {
+				$this._showDialog("It's really not that great.", "The song is already in the playlist, please pick something else.");
+			}
 			else if (result.status == "too_soon") {
 				$this._showDialog("Greedy!", "Too soon, wait " + $this._toMinutes(result.wait_for) + " seconds!", true);
 			}
