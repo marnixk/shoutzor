@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   	# Index request
   	#
 	def index
-		@last_added = SongDecorator.decorate(Song.added_last(100))
+		@last_added = SongDecorator.decorate(Song.added_last(50))
 		@playstatus = Player::Jukebox.instance.now_playing
  	end
 

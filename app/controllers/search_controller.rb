@@ -15,7 +15,7 @@ class SearchController < ApplicationController
 						Song.search_by(params['query'], params['by'])
 					elsif params['query'].blank? then
 						title = "Most recently added songs ..."
-						Song.added_last(100)
+						Song.added_last(50)
 					else
 						title = "Results for '#{params['query']}'"
 						Song.search_all(params['query'])
