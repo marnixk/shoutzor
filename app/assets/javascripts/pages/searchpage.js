@@ -17,6 +17,8 @@
 			container : "#comingUpContainer"
 		});
 
+		$("#history").history({});
+
 		$("#modal_dialog").modalDialog();
 
 		$("#effect").visualBase({

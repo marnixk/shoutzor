@@ -6,6 +6,9 @@ class Song < ActiveRecord::Base
   	
 	has_many :votes
 
+	# get history
+	scope :history, proc { order("last_played DESC").limit(10) }
+
 	# get a randoms ong
 	scope :random_song, lambda { order("RANDOM()").limit(1) }
 

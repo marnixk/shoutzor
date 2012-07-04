@@ -25,6 +25,25 @@ class VoteController < ApplicationController
 		end
 	end
 
+
+	def history
+		@history = Song.history.map do |p| 
+			{ 
+				:played_at => p.updated_at,
+				:song => p.to_json
+			}
+		end
+
+		@first = @history.first
+		@history = @history[1..-1]
+
+		respond_to do |f|
+			f.json { render :json => {:now_playing => @first, :history => @history } } 
+			f.html { render :layout => nil }
+		end
+	end
+
+
 	#
 	# Return json result for upcoming votes
 	#

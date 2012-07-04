@@ -17,6 +17,9 @@ class Vote < ActiveRecord::Base
 	# get "next up"
 	scope :next_vote, proc { next_votes(1) }
 
+	# get history
+	scope :history, proc { where(:handled => true).order("created_at DESC").limit(50) }
+
 	# get unprocessed votes
 	scope :fresh, lambda { where(:handled => false ) }
 end

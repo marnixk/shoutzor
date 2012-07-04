@@ -24,6 +24,7 @@
 //= require components/songlist
 //= require components/search
 //= require components/comingup
+//= require components/history
 //= require components/remoteform
 
 //= require components/visual/base

@@ -6,6 +6,7 @@ Shoutzor::Application.routes.draw do
   get :vote_for, :action => :vote_for, :controller => :vote 
   get :coming_up, :action => :coming_up, :controller => :vote
   get :playlist, :action => :playlist, :controller => :vote
+  get :history, :action => :history, :controller => :vote
   
   #
   # Search related requests
