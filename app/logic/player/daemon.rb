@@ -23,11 +23,16 @@ module Player
 			@thread = Thread.fork do |p|
 				begin
 					while @@running
-						@jukebox.music_cycle
+
+						if play_music then
+							@jukebox.music_cycle
+						end
+						
 						sleep 1 
 					end
 					@jukebox.stop
 				ensure
+					ActiveRecord::Base.verify_active_connections!()
 					Rails.logger.flush
 				end
 			end

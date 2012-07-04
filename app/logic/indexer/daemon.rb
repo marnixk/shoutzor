@@ -17,15 +17,21 @@ module Indexer
 			# initialize vars
 			@indexer = Indexer::Indexer.new("/home/marnix/Music/")
 
-			@indexer.index_check
-			@indexer.listen_for_change
+			begin
+				@indexer.index_check
+				@indexer.listen_for_change
 
-			# # make music cycle run every second inside a thread
-			@thread = Thread.fork do |p|
-				while @@running
-					sleep 1 
-					Rails.logger.flush
+				# # make music cycle run every second inside a thread
+				@thread = Thread.fork do |p|
+					while @@running
+						sleep 1 
+						Rails.logger.flush
+					end
 				end
+			rescue => e
+				Rails.logger e.exception
+			ensure 
+				ActiveRecord::Base.verify_active_connections!()
 			end
 		end
 

@@ -19,7 +19,8 @@ module Indexer
 		def index_check
 			Rails.logger.info "Starting full index check"
 
-			Dir.glob(@listen_to + "/**") do |f|
+			Dir.glob([@listen_to + "/**", @listen_to + "/**/**"]) do |f|
+				Rails.logger.info "Analyzing: #{f}"
 				if @analyzer.should_index?(f) and not @library.indexed?(f) then
 					song = @analyzer.analyze(f)
 					song.save
