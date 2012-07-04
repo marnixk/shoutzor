@@ -27,10 +27,12 @@ module Player
 						if play_music then
 							@jukebox.music_cycle
 						end
-						
+
 						sleep 1 
 					end
 					@jukebox.stop
+				rescue ErrorType => e
+					Rails.logger.error "Error occured: #{e}"
 				ensure
 					ActiveRecord::Base.verify_active_connections!()
 					Rails.logger.flush

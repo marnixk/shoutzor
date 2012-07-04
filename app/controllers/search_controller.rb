@@ -10,17 +10,24 @@ class SearchController < ApplicationController
 
 	def list
 
-		puts params.inspect
-
 		results = 	if %w(title artist album).include?(params['by']) then
+						title = "Results for #{params['by']} search for '#{params['query']}' "
 						Song.search_by(params['query'], params['by'])
+					elsif params['query'].blank? then
+						title = "Most recently added songs ..."
+						Song.added_last(100)
 					else
+						title = "Results for '#{params['query']}'"
 						Song.search_all(params['query'])
 					end
 
 		small = results.map { |song| song.to_json }
 
-		render :json => small
+		if small.empty? then 
+			small = [{ :title => "There are no results for your query" }]
+		end
+
+		render :json => {:title => title, :songs => small }
 	end
 
 

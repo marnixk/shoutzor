@@ -1,7 +1,9 @@
 <% list = Array(list) %>
 
 <div id="songlist">
-
+	<div class="title-container">
+		<h1><span class="title"><%= list_title %></span></h1>
+	</div>
 	<% if not list.empty? then %>
 		<table>
 			<thead>
@@ -23,11 +25,6 @@
 				<% end %>
 			</tbody>
 		</table>
-
-	<% else %>
-		<p>
-			There are no results for your search
-		</p>
 	<% end %>
 
 </div>

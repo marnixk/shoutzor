@@ -16,10 +16,13 @@
 			var $this = this;
 
 			$this.element = $(this.element);
+			$this.title = $this.element.find("span.title");
 
 			// wait for ajax success
 			$("table tr").live("click", function(event, result) {
-				$this._doVoteRequest($(this));
+				if (!$(this).hasClass("no-focus")) {
+					$this._doVoteRequest($(this));
+				}
 			});
 		},
 
@@ -110,10 +113,14 @@
 		/**
 		 * Update the list
 		 */
-		update : function(list) {
+		update : function(results) {
+
+			var list = results.songs;
 			var tableBody = this.element.find("tbody");
 
 			tableBody.find("tr").remove();
+
+			this.title.text(results.title);
 
 			$(list).each(function(i, item) {
 				var row = $("<tr />");
@@ -132,6 +139,9 @@
 				$("<td />").text(item.artist).appendTo(row);
 				$("<td />", { "class" : "tracklength"} ).text(item.length).appendTo(row);
 
+				if (typeof(item.id) === "undefined") {
+					row.addClass("no-focus");
+				}
 
 				tableBody.append(row);
 

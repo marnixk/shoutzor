@@ -132,6 +132,24 @@ button {
 
 
 #songlist {
+
+	.title-container {
+		margin-top: 1em;
+		margin-bottom: 2em;
+
+		h1 {
+			display: inline;
+			padding-bottom: 1em;
+
+			.title {
+				font-size: 4.0em;
+				font-family: "OpenSansCondensedLight";
+				color: #ddd;
+			}
+		}
+
+	}
+
 	table {
 		width: 100%;
 		margin-bottom: 4em;
@@ -485,3 +503,4 @@ body.fire.loginpage {
 	}
 
 }
+
