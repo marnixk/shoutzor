@@ -24,7 +24,7 @@
 					function(result) {
 						$this._showDialog(result);
 					},
-					"json"
+					"html"
 				);
 
 				return false;
@@ -35,6 +35,16 @@
 		 * Show the dialog
 		 */
 		_showDialog : function(results) {
+			$("#modal_dialog").data("modalDialog").show({
+				"title" : "Coming up shortly!",
+				"type" : "normal",
+				"buttons" : {
+					"done" : function() {
+						$("#modal_dialog").data("modalDialog").close();
+					}
+				},
+				"content" : results
+			});
 		}
 	});
 

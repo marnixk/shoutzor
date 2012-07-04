@@ -10,7 +10,7 @@ class VoteController < ApplicationController
 		predictor = Player::VotePredictor.new
 		predictions = predictor.predict(votes)
 
-		model_list = predictions.map do |p| 
+		@model_list = predictions.map do |p| 
 			{ 
 				:requested_by => p[:model].user.name, 
 				:requested_at => p[:model].created_at, 
@@ -19,7 +19,10 @@ class VoteController < ApplicationController
 			}
 		end
 
-		render :json => model_list
+		respond_to do |f|
+			f.json { render :json => @model_list }
+			f.html { render :layout => nil }
+		end
 	end
 
 	#

@@ -11,7 +11,7 @@ class SearchController < ApplicationController
 	def list
 
 		results = 	if %w(title artist album).include?(params['by']) then
-						title = "Results for #{params['by']} search for '#{params['query']}' "
+						title = "Results for #{params['by']} search '#{params['query']}' "
 						Song.search_by(params['query'], params['by'])
 					elsif params['query'].blank? then
 						title = "Most recently added songs ..."

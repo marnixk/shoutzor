@@ -1,0 +1,32 @@
+<% if @model_list.empty? %>
+	<p class="text">
+		There are currently no queued votes! The next song will be picked at random.
+		<br/><br/>
+		Go ahead, VOTE!
+	</p>
+<% else %>
+	<div id="playlist">
+		<table>
+			<thead>
+				<tr>
+					<th width="100">by</th>
+					<th>song</th>
+					<th width="50"></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @model_list.each do |s| %>
+					<tr>
+						<td><%= s[:requested_by] %></td>
+						<td class="song">
+							<em><%= s[:song][:artist] %></em><br/>
+							<%= s[:song][:title] %>
+						</td>
+						<td class="play-at"><%= s[:plays_at].strftime("%H:%M") %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+<% end %>

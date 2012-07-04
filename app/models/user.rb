@@ -2,7 +2,7 @@ require 'gmail'
 
 class User < ActiveRecord::Base
 
-	VoteTimeout = 5.minutes
+	VoteTimeout = 5.seconds
 
 	has_many :votes
 

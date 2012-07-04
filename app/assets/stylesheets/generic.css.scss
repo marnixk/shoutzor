@@ -131,6 +131,52 @@ button {
 }
 
 
+#playlist {
+	height: 300px;
+	overflow-y: auto;
+
+
+	table {
+		width: 100%;
+
+
+		th {
+			color: #eee;
+			font-size: 1.2em;
+			font-weight: bold;
+			font-family: "Verdana";
+			text-align: left;
+			padding-bottom: 1em;
+			border-bottom: 1px solid #777;
+		}
+
+		tbody {
+			td {
+				color: #eee;
+				font-size: 1.2em;
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+				line-height: 1.8em;
+
+
+				&.song {
+					color: #aaa;
+
+					em {
+						color: white;
+					}
+				}
+			}
+
+			td.play-at {
+				text-align: right;
+				padding-right: 5px;
+			}
+		}
+	}
+
+}
+
 #songlist {
 
 	.title-container {
