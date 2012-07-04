@@ -20,8 +20,8 @@
 					<tr>
 						<td><%= s[:requested_by] %></td>
 						<td class="song">
-							<em><%= s[:song][:artist] %></em><br/>
-							<%= s[:song][:title] %>
+							<em><%= s[:song][:title] %></em><br/>
+							<small><%= s[:song][:artist] %><br/></small>
 						</td>
 						<td class="play-at"><%= s[:plays_at].strftime("%H:%M") %></td>
 					</tr>

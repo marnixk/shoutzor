@@ -111,7 +111,7 @@
 			// middle
 			var middle = 
 				50 + 
-				($(window).innerHeight() / 2) - 
+				($(window).innerHeight() / 2.5) - 
 				(this.wrapper.height() / 2);
 
 			this.element.css("visibility", "visible");
