@@ -25,9 +25,20 @@
 			this.buttonrow = this.element.find(this.options.s.buttonrow);
 			this.title = this.element.find(this.options.s.title);
 			this.content = this.element.find(this.options.s.content);
+			this.inside = false;
+
+			this.wrapper.hover(
+				function() {
+					$this.inside = true;
+				},
+				function() {
+					$this.inside = false;
+				});
 
 			this.element.click(function() {
-				$this.close();
+				if (!$this.inside) {
+					$this.close();
+				}
 			});
 		},
 
