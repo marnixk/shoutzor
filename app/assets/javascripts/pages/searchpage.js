@@ -29,25 +29,25 @@
 				new Plugins.Composite({
 					mode : "sequential",
 					parts : [
-						new Plugins.Bitmap({bitmap : "SCNLogo"}),
+						// new Plugins.Bitmap({bitmap : "SCNLogo"}),
 						
 
 						// introduction text
 						new Plugins.TextScroller({
 							text : "  welcome  to \n  CLASS 2012!",
 							effects : [ 
-								['up'], ['wait', {delay: 3000}], ['hide']
+								['top'], ['wait', {delay: 100}]
 							]
 						}),
 
 						// class logo
-						new Plugins.Bitmap({bitmap : 'ClassLogo'}),
+						// new Plugins.Bitmap({bitmap : 'ClassLogo'}),
 
 						// where to upload to
 						new Plugins.TextScroller({
 							text : "upload files to _\n\\\\shoutzor.com",
 							effects : [ 
-								['up'], ['wait', {delay: 1500}], ['hide']
+								['top'], ['wait', {delay: 1500}]
 							]
 						}),
 
