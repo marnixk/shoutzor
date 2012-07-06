@@ -29,7 +29,7 @@ module Player
 				# reset tick
 				@tick = 0
 
-				song.last_played = Time.now
+				song.last_played = Time.current
 				song.save
 
 				# set song

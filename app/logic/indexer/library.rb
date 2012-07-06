@@ -21,7 +21,7 @@ module Indexer
 		# 
 		def add_to_library(files)
 			files = Array(files)
-			puts "adding: #{files}"
+			Rails.logger.info "adding: #{files}"
 			files.each do |file|
 				if not indexed?(file) then
 					song = @analyzer.analyze(file)

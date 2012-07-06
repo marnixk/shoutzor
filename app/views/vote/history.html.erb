@@ -23,7 +23,13 @@
 							<em><%= s[:song][:title] %></em><br/>
 							<small><%= s[:song][:artist] %><br/></small>
 						</td>
-						<td class="play-at"><%= s[:played_at].strftime("%H:%M") %></td>
+						<td class="play-at">
+							<% if not s[:played_at].nil? then %>
+								<%= s[:played_at].in_time_zone.strftime("%H:%M")  %>
+							<% else %>
+								n/a
+							<% end %>
+						</td>
 					</tr>
 				<% end %>
 			</tbody>

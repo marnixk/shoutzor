@@ -12,13 +12,15 @@ module Indexer
 		#
 		#  Jukebox cycle
 		#
-		def daemonize
+		def daemonize(skip_index_check = false)
 
 			# initialize vars
 			@indexer = Indexer::Indexer.new("/home/marnix/Music/")
 
 			begin
-				@indexer.index_check
+				if not skip_index_check then
+					@indexer.index_check
+				end
 				@indexer.listen_for_change
 
 				# # make music cycle run every second inside a thread

@@ -64,5 +64,8 @@ module Shoutzor
     # gmail account settings
     config.mailname = "shoutzor@gmail.com"
     config.mailpass = "shoutzor_reply"
+
+
+    config.time_zone = "Amsterdam"
   end
 end

@@ -29,7 +29,7 @@ class VoteController < ApplicationController
 	def history
 		@history = Song.history.map do |p| 
 			{ 
-				:played_at => p.updated_at,
+				:played_at => p.last_played,
 				:song => p.to_json
 			}
 		end
