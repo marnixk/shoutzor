@@ -2,7 +2,7 @@ class Song < ActiveRecord::Base
 
 	MaxWaitUntilSongAgain = 1.hour
 
-	attr_accessible :title, :album, :file, :last_played, :track, :artist, :length
+	attr_accessible :title, :album, :file, :last_played, :track, :artist, :length, :crc
   	
 	has_many :votes
 

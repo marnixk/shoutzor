@@ -24,8 +24,11 @@ module Indexer
 			tags = fileref.tag
 			properties = fileref.audio_properties
 
+			crc = Digest::MD5.hexdigest(File.read(file))
+
 			# return song instance
 			Song.new({ 	:file => file, 
+						:crc => crc,
 						:title => tags.title || "Untitled", 
 						:artist => tags.artist || "Unknown artist", 
 						:album => tags.album || "Unknown album", 

@@ -25,6 +25,8 @@ module Indexer
 					song = @analyzer.analyze(f)
 					song.save
 					Rails.logger.info "Saved: #{song.file}"
+				else
+					Rails.logger.info "Not indexing file: #{f}"
 				end
 			end
 

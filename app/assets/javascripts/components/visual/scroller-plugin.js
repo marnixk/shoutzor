@@ -39,6 +39,25 @@
 			}
 
 			return false;
+		},
+
+		/**
+		 * Scroll from right to left
+		 */
+		left : function(context) {
+			var 
+				deltaFrame = context.world.frame - context.plugin.effectStartFrame,
+				startX = context.visual.width + 10 - Math.floor(deltaFrame),
+				textLength = context.text.length * 8; 
+
+			context.x = startX;
+			context.y = 7;
+
+			if (startX < -textLength) {
+				return true;
+			}
+
+			return false;
 		}
 
 	};
@@ -81,8 +100,6 @@
 				$this.banner = new TextBanner({});
 				$this.text = options.text;
 				$this.effects = options.effects;
-				$this.effectIdx = 0;
-				$this.effectStartFrame = 0;
 
 				$this.nLines = 1;
 				for (var idx = 0; idx < $this.text.length; ++idx) {
@@ -99,6 +116,9 @@
 			 */
 			reset : function(visual, world) {
 				this.startFrame = world? world.frame : 0;
+				this.effectIdx = 0;
+				this.effectStartFrame = world ? world.frame : 0;
+
 			},
 
 
@@ -127,14 +147,15 @@
 						"visual" : visual, 
 						"world" : world, 
 						"plugin" : this,
-						"previous" : this.oldContext
+						"previous" : this.oldContext,
+						"text" : typeof(this.text) === "function" ? this.text() : this.text
 					};
 
 				this.oldContext = context;
 
 				var result = effectInstance.apply(this, [context]);
 				if (result) { 
-					this._nextEffect();
+					this._nextEffect(world);
 				}
 
 				this.banner.printString(
@@ -143,7 +164,7 @@
 					context.y,
 					visual.width,
 					visual.height,
-					typeof(context.text) === "undefined" ? this.text : context.text
+					context.text
 				)
 
 				// var 

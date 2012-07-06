@@ -44,7 +44,7 @@
 			 */
 			execute : function(visual, world) {
 
-				this.row = -visual.height + Math.floor((world.frame - this.startFrame) * 0.3);
+				this.row = -visual.height + Math.floor((world.frame - this.startFrame) * 0.5);
 
 				var 
 					centerOffsetX = Math.floor((visual.width / 2) - (this.bitmap.width / 2)),

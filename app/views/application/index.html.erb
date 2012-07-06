@@ -1,5 +1,7 @@
 <% content_for :pagetitle do %>Songlist<% end %>
 
+<%= render :partial => "nowplaying", :locals => {:status => @playstatus} %>
+
 <%= render :partial => "songlist", :locals => { 
 				:list_title => "Most recently added songs ...", 
 				:list => @last_added 

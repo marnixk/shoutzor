@@ -11,7 +11,9 @@ module Indexer
 		#  Has been indexed?
 		#
 		def indexed?(file)
-			Song.where(:file => file).count > 0
+			crc = Digest::MD5.hexdigest(File.read(file))
+			new_crc = Song.where(:crc => crc).count == 0 
+			Song.where(:file => file).count > 0 || (not new_crc)
 		end
 
 		#
@@ -21,8 +23,12 @@ module Indexer
 			files = Array(files)
 			puts "adding: #{files}"
 			files.each do |file|
-				song = @analyzer.analyze(file)
-				song.save
+				if not indexed?(file) then
+					song = @analyzer.analyze(file)
+					song.save
+				else
+					Rails.logger.info "Already indexed '#{file}', skipping"
+				end
 			end
 		end
 		

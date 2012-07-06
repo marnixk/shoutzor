@@ -29,7 +29,8 @@ module Indexer
 					end
 				end
 			rescue => e
-				Rails.logger e.exception
+				Rails.logger.info e.exception
+				Rails.logger.info e.backtrace.join("\n")
 			ensure 
 				ActiveRecord::Base.verify_active_connections!()
 			end

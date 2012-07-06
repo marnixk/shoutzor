@@ -30,7 +30,7 @@
 					},
 					"json"
 				);
-			}, 1000);
+			}, 1500);
 
 			$this._renderItem($this.element.data("status"));
 		},
@@ -41,7 +41,7 @@
 		_renderItem : function(status) {
 			var $this = this;
 
-			$this.name.text(status.song.title + " by " + status.song.artist);
+			$this.name.text(status.song.artist + "\n" + status.song.title);
 			$this.length.text(
 				status.formatted.playtime + " / " + 
 				status.formatted.track_length

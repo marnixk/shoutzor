@@ -6,6 +6,13 @@
 	window.Pages = window.Pages || {};
 
 	/**
+	 * retrieve the now playing text
+	 */
+	function getNowPlayingText() {
+		return $("#status .now-playing").text();
+	}
+
+	/**
 	 * Search page initialization
 	 */
 	window.Pages.SearchPage = function() {
@@ -29,9 +36,7 @@
 				new Plugins.Composite({
 					mode : "sequential",
 					parts : [
-						// new Plugins.Bitmap({bitmap : "SCNLogo"}),
 						
-
 						// introduction text
 						new Plugins.TextScroller({
 							text : "  welcome  to \n  CLASS 2012!",
@@ -40,38 +45,29 @@
 							]
 						}),
 
+						new Plugins.TextScroller({
+							text : getNowPlayingText,
+							effects : [
+								['left'],
+							]
+						}),
+
 						// class logo
-						// new Plugins.Bitmap({bitmap : 'ClassLogo'}),
+						new Plugins.Bitmap({bitmap : 'ClassLogo'}),
 
 						// where to upload to
 						new Plugins.TextScroller({
 							text : "upload files to _\n\\\\shoutzor.com",
 							effects : [ 
-								['top'], ['wait', {delay: 1500}]
+								['top'], ['wait', {delay: 100}]
 							]
-						}),
+						})
 
+						// new Plugins.Bitmap({bitmap : "SCNLogo"}),
 
-						// new Plugins.TextScroller({
-						// 	type : 'pattern',
-						// 	pattern : [],
-						// 	effects : [ ['pulsate'] ]
-						// }),
-
-						// // when: at end of song
-						// // show: coming up next
-						// new Plugins.TextScroller({
-						// 	when : function() { return false;  },
-						// 	text : function() { return 'coming up next: NextSong'; },
-						// 	effects : [ ['left'] ]
-						// })
 					]
 				})
-/*
-				new Plugins.TextScroller({
-					
-				})
-				 */
+
 			]
 		});
 		
