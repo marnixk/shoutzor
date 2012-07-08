@@ -39,13 +39,15 @@
 		 * Render the item
 		 */
 		_renderItem : function(status) {
-			var $this = this;
+			if (status && status.song && status.song.artist && status.song.title) {
+				var $this = this;
 
-			$this.name.text(status.song.artist + "\n" + status.song.title);
-			$this.length.text(
-				status.formatted.playtime + " / " + 
-				status.formatted.track_length
-			);
+				$this.name.text(status.song.artist + "\n" + status.song.title);
+				$this.length.text(
+					status.formatted.playtime + " / " + 
+					status.formatted.track_length
+				);
+			}
 		},
 
 

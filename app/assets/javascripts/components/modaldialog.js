@@ -49,9 +49,20 @@
 		_setupButtons : function(buttons) {
 			this.buttonrow.find("button").remove();
 			for (var label in buttons) {
+
+				if (label.charAt(0) == '_') {
+					continue;
+				}
+
+				var bClass = null;
+				if (buttons._classes) {
+					bClass = buttons._classes[label];
+				}
+
 				$("<button />")
 					.text(label)
 					.click(buttons[label])
+					.toggleClass(bClass, bClass != null)
 					.appendTo(this.buttonrow);
 			}
 		},	
@@ -130,6 +141,7 @@
 			// animate to visibility
 			this.wrapper
 				.css({ top : middle + "px" })
+				.stop(true, true)
 				.animate(
 					{
 						top : "-=50px",

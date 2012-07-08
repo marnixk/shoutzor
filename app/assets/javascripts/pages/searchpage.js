@@ -28,9 +28,20 @@
 
 		$("#modal_dialog").modalDialog();
 
+		function effectTint(x) {
+
+			return {
+				r : 0.4,
+				g : 1.0,
+				b : 0.3
+			};			
+
+		}
+
 		$("#effect").visualBase({
 			copyRatio : 0.8,
 			copyMargin: 0.1,
+			tint: effectTint,
 			plugins : [
 				new Plugins.Fuel({}),
 				new Plugins.Composite({
@@ -57,13 +68,13 @@
 
 						// where to upload to
 						new Plugins.TextScroller({
-							text : "upload files to _\n\\\\shoutzor.com",
+							text : "upload files to\n\\\\shoutzor.com",
 							effects : [ 
-								['top'], ['wait', {delay: 100}]
+								['top'], ['wait', {delay: 150}]
 							]
-						})
+						}),
 
-						// new Plugins.Bitmap({bitmap : "SCNLogo"}),
+						new Plugins.Bitmap({bitmap : "SCNLogo"})
 
 					]
 				})

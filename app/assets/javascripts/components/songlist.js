@@ -19,7 +19,7 @@
 			$this.title = $this.element.find("span.title");
 
 			// wait for ajax success
-			$("table tr").live("click", function(event, result) {
+			$this.element.find("table tr").live("click", function(event, result) {
 				if (!$(this).hasClass("no-focus")) {
 					$this._doVoteRequest($(this));
 				}
@@ -31,17 +31,43 @@
 		 * Try to vote
 		 */
 		_doVoteRequest : function(row) {
-			var 
-				$this = this,
-				url = row.data("vote-url");
-				
-			$.get(
-				url, {},
-				function(result) {
-					$this._showResult(result);
-				},
-				"json"
-			);
+			var $this = this;
+			var url = row.data("vote-url");
+
+			$("#modal_dialog").data("modalDialog").show({
+				"title" : "Are you sure?",
+				"content" : "<p class='text'>Are you sure you want to vote for this song?<br/><br/>After you have, you won't be able to vote for a while!</p>",
+				"type" : "normal",
+				"buttons" : {
+
+					"no" : function() {
+						$("#modal_dialog").data("modalDialog").close();
+					},
+
+					"Yes!" : function() {
+						$("#modal_dialog").data("modalDialog").close();
+
+						setTimeout(function() {
+
+							$.get(
+								url, { tstamp : new Date().getTime() },
+								function(result) {
+									$this._showResult(result);
+								},
+								"json"
+							);
+						}, 250);
+						
+					},
+
+					"_classes" : { 
+						"Yes!" : "ok-button",
+						"no" : "cancel-button"
+					}
+
+				}
+			});
+
 		},
 
 		/**
