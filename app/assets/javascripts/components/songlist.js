@@ -45,9 +45,7 @@
 					},
 
 					"Yes!" : function() {
-						$("#modal_dialog").data("modalDialog").close();
-
-						setTimeout(function() {
+						$("#modal_dialog").data("modalDialog").close(function() {
 
 							$.get(
 								url, { tstamp : new Date().getTime() },
@@ -56,7 +54,8 @@
 								},
 								"json"
 							);
-						}, 250);
+							
+						});
 						
 					},
 

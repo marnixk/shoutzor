@@ -70,7 +70,7 @@
 		/**
 		 * Close the modal dialog
 		 */
-		close : function() {
+		close : function(callback) {
 			var $this = this;
 			this.wrapper.animate(
 				{
@@ -84,6 +84,10 @@
 
 			this.element.fadeOut(500, function() {
 				$this.element.hide();
+
+				if (typeof(callback) === "function") {
+					callback.apply($this, []);
+				}
 			});
 		},
 

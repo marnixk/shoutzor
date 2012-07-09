@@ -558,7 +558,13 @@ body.fire.loginpage {
 			button { font-size: 1.0em; margin-left: 1em; } 
 
 			button.ok-button {
-				@include button-color($blue-light, darken($blue-light, 30%), darken($blue-light, 30%));
+				@include button-color(#eee, #bbb, #999);
+
+				&:hover {
+					@include button-color(#fff, #fff, #999);
+				}
+
+				// @include button-color($blue-light, darken($blue-light, 30%), darken($blue-light, 30%));
 			}
 		}
 

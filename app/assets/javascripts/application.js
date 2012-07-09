@@ -34,6 +34,7 @@
 //= require components/visual/notice-plugin
 //= require components/visual/bitmap-plugin
 //= require components/visual/composite-plugin
+//= require components/visual/colorshift-plugin
 //= require components/visual/vgafont
 //= require components/modaldialog
 

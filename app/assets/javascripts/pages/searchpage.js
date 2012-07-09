@@ -43,6 +43,7 @@
 			copyMargin: 0.1,
 			tint: effectTint,
 			plugins : [
+				new Plugins.ColorShift({tint : effectTint}),
 				new Plugins.Fuel({}),
 				new Plugins.Composite({
 					mode : "sequential",
