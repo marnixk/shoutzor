@@ -1,0 +1,26 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName shoutzor
+        ServerAlias shoutzor.com
+
+        <Location />
+                Options Indexes FollowSymLinks MultiViews
+                Options +Includes
+                Order allow,deny
+                allow from all
+        </Location>
+
+        ErrorLog /var/log/apache2/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel debug
+
+        CustomLog /var/log/apache2/access.log combined
+
+        ProxyPreserveHost on
+        ProxyPass / http://localhost:3000/
+        ProxyPassReverse / http://localhost:3000/
+
+</VirtualHost>
+

@@ -60,109 +60,26 @@
 	"buffers":
 	[
 		{
-			"contents": "<% if @history.empty? %>\n	<p class=\"text\">\n		Shoutz0r hasn't been on that long, so, apparently noone has voted yet. Be the first!\n	</p>\n<% else %>\n	\n\n	<p class=\"current-song\">Now playing: <%= @first[:song][:artist] %> - <%= @first[:song][:title] %></p>\n	\n	<div id=\"playlist\">\n		<table>\n			<thead>\n				<tr>\n					<th>song</th>\n					<th width=\"50\"></th>\n				</tr>\n			</thead>\n\n			<tbody>\n				<% @history.each do |s| %>\n					<tr>\n						<td class=\"song\">\n							<em><%= s[:song][:title] %></em><br/>\n							<small><%= s[:song][:artist] %><br/></small>\n						</td>\n						<td class=\"play-at\">\n							<% if not s[:played_at].nil? then %>\n								<%= s[:played_at].strftime(\"%H:%M\")  %>\n							<% else %>\n								n/a\n							<% end %>\n						</td>\n					</tr>\n				<% end %>\n			</tbody>\n		</table>\n	</div>\n<% end %>",
-			"file": "app/views/vote/history.html.erb",
-			"file_size": 815,
-			"file_write_time": 1341569336000000,
-			"settings":
-			{
-				"buffer_size": 802,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/vote/playlist.html.erb",
-			"settings":
-			{
-				"buffer_size": 699,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/assets/javascripts/pages/searchpage.js",
 			"settings":
 			{
-				"buffer_size": 1514,
+				"buffer_size": 1672,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/components/visual/scroller-plugin.js",
+			"file": "app/assets/javascripts/components/visual/colorshift-plugin.js",
 			"settings":
 			{
-				"buffer_size": 3880,
+				"buffer_size": 2935,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/application/_nowplaying.html.erb",
+			"file": "app/assets/javascripts/application.js",
 			"settings":
 			{
-				"buffer_size": 218,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/components/playerstatus.js",
-			"settings":
-			{
-				"buffer_size": 901,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "db/migrate/20120706093602_file_has_md5_hash.rb",
-			"settings":
-			{
-				"buffer_size": 139,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/logic/indexer/library.rb",
-			"settings":
-			{
-				"buffer_size": 813,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/logic/indexer/analyzer.rb",
-			"settings":
-			{
-				"buffer_size": 863,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/logic/indexer/daemon.rb",
-			"settings":
-			{
-				"buffer_size": 851,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/environment.rb",
-			"settings":
-			{
-				"buffer_size": 152,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/application.rb",
-			"settings":
-			{
-				"buffer_size": 3034,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/logic/player/music_control.rb",
-			"settings":
-			{
-				"buffer_size": 1533,
+				"buffer_size": 1451,
 				"line_ending": "Unix"
 			}
 		}
@@ -239,43 +156,49 @@
 	},
 	"file_history":
 	[
+		"/home/marnix/tmp/shoutzor/app/views/vote/history.html.erb",
+		"/home/marnix/tmp/shoutzor/app/views/vote/playlist.html.erb",
+		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/visual/scroller-plugin.js",
+		"/home/marnix/tmp/shoutzor/app/views/application/_nowplaying.html.erb",
+		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/playerstatus.js",
+		"/home/marnix/tmp/shoutzor/db/migrate/20120706093602_file_has_md5_hash.rb",
+		"/home/marnix/tmp/shoutzor/app/logic/indexer/library.rb",
+		"/home/marnix/tmp/shoutzor/app/logic/indexer/analyzer.rb",
+		"/home/marnix/tmp/shoutzor/app/logic/indexer/daemon.rb",
+		"/home/marnix/tmp/shoutzor/config/environment.rb",
+		"/home/marnix/tmp/shoutzor/config/application.rb",
+		"/home/marnix/tmp/shoutzor/app/logic/player/music_control.rb",
+		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/songlist.js",
+		"/home/marnix/tmp/shoutzor/app/assets/stylesheets/generic.css.scss",
+		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/visual/colorshift-plugin.js",
+		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/modaldialog.js",
 		"/home/marnix/tmp/shoutzor/app/views/application/index.html.erb",
 		"/home/marnix/tmp/shoutzor/config/initializers/indexer_init.rb",
 		"/home/marnix/tmp/shoutzor/app/controllers/vote_controller.rb",
-		"/home/marnix/tmp/shoutzor/app/logic/player/music_control.rb",
 		"/home/marnix/tmp/shoutzor/app/models/vote.rb",
 		"/home/marnix/tmp/shoutzor/app/logic/indexer/indexer.rb",
 		"/home/marnix/tmp/shoutzor/app/models/song.rb",
-		"/home/marnix/tmp/shoutzor/app/logic/indexer/library.rb",
-		"/home/marnix/tmp/shoutzor/app/logic/indexer/analyzer.rb",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/visual/bitmap-plugin.js",
 		"/home/marnix/tmp/shoutzor/app/controllers/application_controller.rb",
-		"/home/marnix/tmp/shoutzor/app/assets/stylesheets/generic.css.scss",
 		"/home/marnix/tmp/shoutzor/app/logic/votes/vote_convert.rb",
 		"/home/marnix/tmp/shoutzor/app/controllers/search_controller.rb",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/search.js",
 		"/home/marnix/tmp/shoutzor/app/views/application/_songlist.html.erb",
-		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/songlist.js",
 		"/home/marnix/tmp/shoutzor/app/views/shared/_modal_dialog.html.erb",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/comingup.js",
 		"/home/marnix/tmp/shoutzor/app/models/user.rb",
-		"/home/marnix/tmp/shoutzor/app/views/vote/playlist.html.erb",
 		"/home/marnix/tmp/shoutzor/app/views/shared/_visual.html.erb",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/history.js",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/application.js",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/pages/searchpage.js",
 		"/home/marnix/tmp/shoutzor/config/routes.rb",
-		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/modaldialog.js",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/playlist.js",
 		"/home/marnix/tmp/shoutzor/app/views/layouts/htmlbase.html.erb",
 		"/home/marnix/tmp/shoutzor/app/assets/stylesheets/application.css",
 		"/home/marnix/tmp/shoutzor/app/views/layouts/application.html.erb",
 		"/home/marnix/tmp/shoutzor/app/controllers/status_controller.rb",
 		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/visual/base.js",
-		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/visual/scroller-plugin.js",
-		"/home/marnix/tmp/shoutzor/config/environment.rb",
 		"/home/marnix/tmp/shoutzor/app/logic/votes/vote_creator.rb",
-		"/home/marnix/tmp/shoutzor/app/logic/indexer/daemon.rb",
 		"/home/marnix/tmp/shoutzor/app/logic/player/daemon.rb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120703094238_last_played_is_datetime.rb",
 		"/home/marnix/tmp/shoutzor/db/schema.rb",
@@ -288,13 +211,10 @@
 		"/home/marnix/tmp/shoutzor/app/views/shared/visual.html.erb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120625153655_add_pin.rb",
 		"/home/marnix/tmp/shoutzor/app/logic/player/jukebox.rb",
-		"/home/marnix/tmp/shoutzor/app/assets/javascripts/components/playerstatus.js",
-		"/home/marnix/tmp/shoutzor/app/views/application/_nowplaying.html.erb",
 		"/home/marnix/tmp/shoutzor/app/decorators/song_decorator.rb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120625145211_track_number.rb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120628134649_song_has_length.rb",
 		"/home/marnix/tmp/shoutzor/Gemfile",
-		"/home/marnix/tmp/shoutzor/config/application.rb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120625140056_create_votes.rb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120625135944_create_songs.rb",
 		"/home/marnix/tmp/shoutzor/db/migrate/20120625140050_create_users.rb",
@@ -363,10 +283,7 @@
 		"/home/marnix/tmp/default_64/modules/httpd/manifests/database.pp",
 		"/home/marnix/tmp/default_64/modules/httpd/manifests/apache.pp",
 		"/home/marnix/tmp/default_64/modules/httpd/manifests/tomcat.pp",
-		"/home/marnix/tmp/default_64/modules/httpd/manifests/scripts.pp",
-		"/home/marnix/tmp/default_64/modules/hipposettings/templates/tomcat/hst-config.properites",
-		"/home/marnix/tmp/default_64/modules/hipposettings/templates/tomcat/hst-config.properties",
-		"/home/marnix/tmp/default_64/modules/httpd/templates/vhost.erb"
+		"/home/marnix/tmp/default_64/modules/httpd/manifests/scripts.pp"
 	],
 	"find":
 	{
@@ -374,7 +291,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 94.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"",
@@ -389,6 +306,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			", 2 *",
+			"2 *",
+			"U ",
+			"*",
+			"in",
+			"H ",
+			"H",
+			"$t",
+			"bitmap",
+			"Bitmap",
+			"m",
 			" = ",
 			"startY",
 			"$",
@@ -505,18 +433,7 @@
 			"#",
 			"	-",
 			"^$",
-			"(\\d+)",
-			"\\d+",
-			"([\\-\\w]+)/([\\-\\w]+)",
-			"^([d]\\w+)/(\\w+)/(.*)$",
-			"^([^d]\\w+)/(.*)$",
-			"(\\w+)/(.*)",
-			"/content/documents/pchooft/account/",
-			"^\\-\\s$",
-			"^([^#].*)$",
-			"\n				$.render = function(name, content) {\n					\n				};",
-			"); %>",
-			"());"
+			"(\\d+)"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -585,28 +502,28 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/vote/history.html.erb",
+					"file": "app/assets/javascripts/pages/searchpage.js",
 					"settings":
 					{
-						"buffer_size": 802,
+						"buffer_size": 1672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								676,
-								676
+								553,
+								553
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -617,320 +534,50 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/vote/playlist.html.erb",
+					"file": "app/assets/javascripts/components/visual/colorshift-plugin.js",
 					"settings":
 					{
-						"buffer_size": 699,
+						"buffer_size": 2935,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								607,
-								626
+								1626,
+								1626
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 927.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/assets/javascripts/pages/searchpage.js",
+					"file": "app/assets/javascripts/application.js",
 					"settings":
 					{
-						"buffer_size": 1514,
+						"buffer_size": 1451,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1090,
-								1090
+								1334,
+								1334
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 390.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/javascripts/components/visual/scroller-plugin.js",
-					"settings":
-					{
-						"buffer_size": 3880,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1072,
-								1072
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/application/_nowplaying.html.erb",
-					"settings":
-					{
-						"buffer_size": 218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								218,
-								218
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/assets/javascripts/components/playerstatus.js",
-					"settings":
-					{
-						"buffer_size": 901,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								876,
-								876
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "db/migrate/20120706093602_file_has_md5_hash.rb",
-					"settings":
-					{
-						"buffer_size": 139,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								134,
-								134
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/logic/indexer/library.rb",
-					"settings":
-					{
-						"buffer_size": 813,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								744,
-								744
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/logic/indexer/analyzer.rb",
-					"settings":
-					{
-						"buffer_size": 863,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								130,
-								130
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/logic/indexer/daemon.rb",
-					"settings":
-					{
-						"buffer_size": 851,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								151,
-								151
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "config/environment.rb",
-					"settings":
-					{
-						"buffer_size": 152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								152,
-								152
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "config/application.rb",
-					"settings":
-					{
-						"buffer_size": 3034,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3023,
-								3023
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "app/logic/player/music_control.rb",
-					"settings":
-					{
-						"buffer_size": 1533,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								546,
-								546
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -982,6 +629,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"application.j",
+				"assets/javascripts/application.js"
+			],
+			[
+				"generic",
+				"assets/stylesheets/generic.css.scss"
+			],
+			[
+				"modald",
+				"assets/javascripts/components/modaldialog.js"
+			],
+			[
+				"songlist.js",
+				"assets/javascripts/components/songlist.js"
+			],
 			[
 				"index",
 				"views/application/index.html.erb"
@@ -1060,10 +723,6 @@
 			],
 			[
 				"genei",
-				"assets/stylesheets/generic.css.scss"
-			],
-			[
-				"generic",
 				"assets/stylesheets/generic.css.scss"
 			],
 			[
