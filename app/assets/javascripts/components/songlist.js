@@ -99,7 +99,7 @@
 		 */
 		_toMinutes : function(secs) {
 			if (secs > 60) {
-				return "0" + Math.floor(secs / 60) + ":" + ((secs % 60) < 10? '0' : '') + (secs % 60);
+				return (Math.floor(secs / 60) < 10 ? "0" : "") + Math.floor(secs / 60) + ":" + ((secs % 60) < 10? '0' : '') + (secs % 60);
 			}
 			return secs;
 		},

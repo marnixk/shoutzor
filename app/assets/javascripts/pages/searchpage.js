@@ -28,22 +28,17 @@
 
 		$("#modal_dialog").modalDialog();
 
-		function effectTint(x) {
-
-			return {
-				r : 0.4,
-				g : 1.0,
-				b : 0.3
-			};			
-
-		}
 
 		$("#effect").visualBase({
 			copyRatio : 0.8,
 			copyMargin: 0.1,
-			tint: effectTint,
+			tint: ColorSets.green,
 			plugins : [
-				new Plugins.ColorShift({tint : effectTint}),
+				new Plugins.ColorShift({tints : [
+						ColorSets.cyan, ColorSets.green, ColorSets.purple, 
+						ColorSets.red, ColorSets.blue
+					]}
+				),
 				new Plugins.Fuel({}),
 				new Plugins.Composite({
 					mode : "sequential",

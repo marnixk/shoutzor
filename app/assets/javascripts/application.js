@@ -36,6 +36,7 @@
 //= require components/visual/composite-plugin
 //= require components/visual/colorshift-plugin
 //= require components/visual/vgafont
+//= require components/visual/colorsets
 //= require components/modaldialog
 
 //= require pages/loginpage

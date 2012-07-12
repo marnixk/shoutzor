@@ -55,16 +55,21 @@
 			 */
 			_construct : function(options) {
 				this.options = options;
-				this.tint = options.tint;
+				this.tints = options.tints;
 
 				// base colors
-				this.colors = new Array(255);
-				for (var idx = 0; idx < this.colors.length; ++idx) {
-					this.colors[idx] = {
-								r: this.tint(idx).r * 255 * (idx / 255), 
-								g: this.tint(idx).g * 255 * (idx / 255), 
-								b: this.tint(idx).b * 255 * (idx / 255)
-							};
+				this.colors = [];
+
+				for (var tIdx = 0; tIdx < $(this.tints).length; ++tIdx) {
+					var tFunc = this.tints[tIdx];
+					this.colors[tIdx] = new Array(255);
+					for (var cIdx = 0; cIdx < this.colors[tIdx].length; ++cIdx) {
+						this.colors[tIdx][cIdx] = {
+									r: tFunc(cIdx).r * 255 * (cIdx / 255), 
+									g: tFunc(cIdx).g * 255 * (cIdx / 255), 
+									b: tFunc(cIdx).b * 255 * (cIdx / 255)
+								};
+					}
 				}
 
 				this.reset();
@@ -81,9 +86,14 @@
 			 * Do color shift
 			 */
 			execute : function(visual, world) {
-				if ((world.frame % this.options.everyNFrames) < this.options.shiftForNFrames) {
-					this.hue -= this.options.colorShift;
-					this._paletteShift(visual, this.hue);
+
+				var fPos = (world.frame % this.options.everyNFrames);
+
+				this.paletteIdx = 
+					Math.floor(world.frame / this.options.everyNFrames) % this.colors.length;
+
+				if (fPos < this.options.shiftForNFrames) {
+					this._paletteShift(visual, fPos / this.options.shiftForNFrames);
 				}
 			},
 
@@ -91,17 +101,29 @@
 			 * Shift the entire palette
 			 */
 			_paletteShift : function(visual, hue) {
+				var 
+					nowSet = this.colors[this.paletteIdx],
+					nextSet = this.colors[(this.paletteIdx + 1) % this.colors.length];
+
 				for (var idx = 0; idx < 255; ++idx) {
-					var hueColor = this._hueShift(this.colors[idx], hue);
-					visual.colors[idx] = Raphael.rgb(hueColor.r, hueColor.g, hueColor.b);
+					var 
+						nowColor = nowSet[idx],
+						nextColor = nextSet[idx],
+						color = {
+							r : nowColor.r + (nextColor.r - nowColor.r) * hue,
+							g : nowColor.g + (nextColor.g - nowColor.g) * hue,
+							b : nowColor.b + (nextColor.b - nowColor.b) * hue
+						};
+
+					visual.colors[idx] = Raphael.rgb(color.r, color.g, color.b);
 				}
-			},
+			}
 
 			/**
 			 * Hue shift:
 			 *
 			 * transforms hue into UW tex-coord and applies a matrix transform
-			 */
+
 			_hueShift : function(rgb, hue) {
 				var 
 					U = Math.cos(hue * Math.PI/180.0),
@@ -134,6 +156,7 @@
 
 			  return ret;				
 			}
+						 */
 		}
 	});
 

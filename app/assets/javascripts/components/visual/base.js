@@ -106,9 +106,11 @@
 			// make sure animation stops when window loses focus
 			$this.animating = true;
 			$(window).blur(function() {
+				$("body").toggleClass("blurred", true);
 				$this.animating = false;
 			});
 			$(window).focus(function() {
+				$("body").toggleClass("blurred", false);
 				$this.animating = true;
 			});
 

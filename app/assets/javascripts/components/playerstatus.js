@@ -23,13 +23,16 @@
 			$this.length = $this.element.find(".length");
 
 			setInterval(function() {
-				$.get(
-					"/now_playing", { "tstamp" : new Date().getTime() },
-					function(result) {
-						$this._renderItem(result);
-					},
-					"json"
-				);
+
+				if (!$("body").hasClass("blurred")) {
+					$.get(
+						"/now_playing", { "tstamp" : new Date().getTime() },
+						function(result) {
+							$this._renderItem(result);
+						},
+						"json"
+					);
+				}
 			}, 1500);
 
 			$this._renderItem($this.element.data("status"));
