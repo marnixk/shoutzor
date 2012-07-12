@@ -10,7 +10,7 @@ class Song < ActiveRecord::Base
 	scope :history, proc { order("last_played DESC").limit(10) }
 
 	# get a randoms ong
-	scope :random_song, lambda { order("RANDOM()").limit(1) }
+	scope :random_song, lambda { order("RAND()").limit(1) }
 
 	# search for song with specific text
 	scope :search_all, lambda { |q| where("title LIKE ? or artist LIKE ? or album LIKE ?", "%#{q}%", "%#{q}%", "%#{q}%") }

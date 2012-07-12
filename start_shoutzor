@@ -1,0 +1,1 @@
+RAILS_ENV=development INDEXER=on MUSIC=on rails s
