@@ -2,9 +2,6 @@
 	"folders":
 	[
 		{
-			"path": "/home/marnix/Programming/shoutzor"
-		},
-		{
 			"path": "app"
 		},
 		{
@@ -15,6 +12,9 @@
 		},
 		{
 			"path": "app/assets"
+		},
+		{
+			"path": "/home/marnix/Programming/git/shoutzor"
 		}
 	]
 }

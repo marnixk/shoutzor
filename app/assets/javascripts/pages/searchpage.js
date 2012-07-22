@@ -64,7 +64,7 @@
 
 						// where to upload to
 						new Plugins.TextScroller({
-							text : "upload files to\n\\\\shoutzor.com",
+							text : "upload files to\n\\\\shoutzor",
 							effects : [ 
 								['top'], ['wait', {delay: 150}]
 							]

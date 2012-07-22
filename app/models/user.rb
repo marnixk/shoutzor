@@ -2,11 +2,29 @@ require 'gmail'
 
 class User < ActiveRecord::Base
 
-	VoteTimeout = 15.minutes
+	VoteTimeout = 6.minutes
 
 	has_many :votes
 
 	attr_accessible :name, :pin, :email
+
+	def self.create_account!(name)
+		exists = User.where("name = ?", name).count
+		if exists == 0 then
+			user = User.new
+	        user.name = name
+	        user.email = "local_account@shoutzor"
+	        user.pin = User.generate_pincode
+	        user.save
+
+	        puts "Account with name `#{name}` and pin `#{user.pin}` created"
+	    else
+	    	puts "Account exists."
+	    end
+
+	end
+
+
 
 	def self.generate_pincode
 		1000 + (rand * 8999).to_i
@@ -23,20 +41,20 @@ class User < ActiveRecord::Base
 	def send_notification
 		record = self
 
-        gmail = Gmail.new("shoutzor@gmail.com", "shoutzor_reply")
+        gmail = Gmail.new("yourgmailaccount@gmail.com", "password")
         gmail.deliver do
             to record.email
             subject "Shoutzor inlogcode"
             text_part do
                 body <<-END.strip_heredoc
-                    Hoi,
+                    Hi!
 
-                    Gebruik onderstaande pincode om in te loggen met je accountnaam:
+                    User the pincode below to login to your account:
 
-	                Naam: #{record.name}
+	                Name: #{record.name}
 	                Pincode: #{record.pin}
 
-                    Als het niet lukt even een begeleider vragen!
+                    If you can't get it to work make sure to ask someone that knows!
                 END
             end
         end
